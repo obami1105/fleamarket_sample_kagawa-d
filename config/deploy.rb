@@ -2,7 +2,7 @@
 lock "~> 3.15.0"
 
 set :application, "fleamarket_sample_kagawa-d"
-set :repo_url, "https://github.com/mk299/fleamarket_sample_kagawa-d"
+set :repo_url, "git@github.com:mk299/fleamarket_sample_kagawa-d.git"
 
 # githubのデフォルトのブランチがmasterではなくmainになっている場合のみ以下1行のコメントアウトを外して追記してください。 ※1補足
 # set :branch, 'main'
