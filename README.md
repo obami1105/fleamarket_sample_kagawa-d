@@ -76,3 +76,18 @@ category_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
+
+## 以降は今後追加実装予定の項目である
+### Usersテーブル
+#### SNSでのログイン認証
+|Column|Type|Options|
+|------|----|-------|
+|uid|string|unique: true|
+|provider|string|-|
+|username|string|-|
+
+### Association
+#### Bookmark機能
+- has_many :bookmarks, dependent: :destroy
+#### コメント機能
+- has_many :comments, dependent: :destroy
