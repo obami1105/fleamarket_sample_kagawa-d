@@ -38,7 +38,7 @@ category_id|references|null: false, foreign_key: true|
 - belongs_to_active_hash :shipping_area
 - belongs_to_active_hash :preparation_day
 
-## Categories
+## Categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -47,3 +47,13 @@ category_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :products
 - has_ancestry
+
+## Credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+
+### Association
+-belongs_to :user
