@@ -91,3 +91,16 @@ category_id|references|null: false, foreign_key: true|
 - has_many :bookmarks, dependent: :destroy
 #### コメント機能
 - has_many :comments, dependent: :destroy
+
+## Productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_image_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to_active_hash :brand
+#### 商品出品機能Lv2（画像複数枚投稿）
+- has_many :item_images, dependent: :destroy
+#### Bookmark機能
+- has_many :bookmarks, dependent: :destroy
+#### コメント機能
+- has_many :comments, dependent: :destroy
