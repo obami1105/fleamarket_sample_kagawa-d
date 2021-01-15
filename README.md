@@ -56,4 +56,23 @@ category_id|references|null: false, foreign_key: true|
 |card_id|string|null: false|
 
 ### Association
--belongs_to :user
+- belongs_to :user
+
+## Destinationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|destination_first_name|string|null: false|
+|destination_family_name|string|null: false|
+|destination_first_name_kana|string|null: false|
+|destination_family_name_kana|string|null: false|
+|post_code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|house_number|string|null: false|
+|building_name|string|-|
+|phone_number|string|-|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
