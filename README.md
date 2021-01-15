@@ -122,9 +122,17 @@ category_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
 |comment|text|null: false|
-|created_at|datetime|null: false|
-
+|-|timestamps|null: false|
 
 ### Association
 - belongs_to :user
+- belongs_to :product
+
+## Item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+url|string|null: false|
+
+### Association
 - belongs_to :product
