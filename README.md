@@ -37,3 +37,13 @@ category_id|references|null: false, foreign_key: true|
 - belongs_to_active_hash :shipping_fee_payer
 - belongs_to_active_hash :shipping_area
 - belongs_to_active_hash :preparation_day
+
+## Categories
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestry|string|null: false, add_index|
+
+### Association
+- has_many :products
+- has_ancestry
