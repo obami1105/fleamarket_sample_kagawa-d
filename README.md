@@ -36,6 +36,8 @@ category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
+- belongs_tp :seller, class_name: "User"
+- belongs_tp :buyer, class_name: "User"
 - belongs_to :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_fee_payer
