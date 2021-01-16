@@ -16,7 +16,7 @@
 - has_one :sending_destination, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
 
-## Productsテーブル
+## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
@@ -92,7 +92,7 @@ category_id|references|null: false, foreign_key: true|
 #### コメント機能
 - has_many :comments, dependent: :destroy
 
-## Productsテーブル
+## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_image_id|references|null: false, foreign_key: true|
