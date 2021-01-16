@@ -13,13 +13,17 @@
 
 ### Association
 - has_many :products, dependent: :destroy
+- has_many :sold_items, foreign_key: "seller_id", class_name: "Items"
+- has_many :bought_items, foreign_key: "buyer_id", class_name: "Items"
 - has_one :sending_destination, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
 
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
+|trading_status|integer|null: false|
 |item_image|string|null: false|
 |name|string|null: false|
 |introduction|text|null: false|
