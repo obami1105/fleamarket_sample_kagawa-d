@@ -27,7 +27,7 @@
 |item_image|string|null: false|
 |name|string|null: false|
 |introduction|text|null: false|
-category_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 |item_condition_id|references|null: false, foreign_key: true|
 |shipping_fee_payer_id|references|null: false, foreign_key: true|
 |shipping_area_id|references|null: false, foreign_key: true|
