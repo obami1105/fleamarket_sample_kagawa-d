@@ -12,7 +12,7 @@
 |birth_date|date|null: false|
 
 ### Association
-- has_many :products, dependent: :destroy
+- has_many :items, dependent: :destroy
 - has_many :sold_items, foreign_key: "seller_id", class_name: "Items"
 - has_many :bought_items, foreign_key: "buyer_id", class_name: "Items"
 - has_one :sending_destination, dependent: :destroy
