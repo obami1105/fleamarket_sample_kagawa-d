@@ -1,0 +1,37 @@
+.Footer
+  .Footer__contents
+    .Footer__box
+      %h2.Footer__box--hed FURIMAについて
+      %ul
+        %li
+          = link_to '会社概要（運営会社）','#'
+        %li
+          = link_to 'プライバシーポリシー','#'
+        %li
+          = link_to 'FURIMA利用規約','#'
+        %li
+          = link_to 'ポイントに関する特約','#'
+    .Footer__box
+      %h2.Footer__box--hed FURIMAを見る
+      %ul
+        %li
+          = link_to 'カテゴリー一覧','#'
+        %li
+          = link_to 'ブランド一覧','#'
+    .Footer__box
+      %h2.Footer__box--hed ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to 'FRIMAガイド','#'
+        %li
+          = link_to 'FRIMAロゴ利用ガイドライン','#'
+        %li
+          = link_to 'お知らせ','#'
+  .Footer__logo
+    = link_to image_tag('logo/logo-white.png', alt:'FURIMA'), root_path
+  .copy © FURIMA
+.SellBtn
+  -# = link_to image_tag('icon/icon_camera.png', alt:'出品する'), '#'
+  = link_to '#' do
+    = image_tag('icon/icon_camera.png', class:'NavIcon')
+    %span 出品する
