@@ -3,40 +3,34 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|password|string|null: false|
+|encrypted_password|string|null: false|
 |email|string|null: false|unique: true|
 |first_name|string|null: false|
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
 |family_name_kana|string|null: false|
-|birth_date|date|null: false|
+|birth_date|date|null: false|buyer
 
 ### Association
 - has_many :items, dependent: :destroy
-- has_many :sold_items, foreign_key: "seller_id", class_name: "Items"
-- has_many :bought_items, foreign_key: "buyer_id", class_name: "Items"
 - has_one :sending_destination, dependent: :destroy
 - has_one :credit_card, dependent: :destroy
 
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|references|null: false, foreign_key: true|
-|buyer_id|references|foreign_key: true|
+|seller|references|null: false, foreign_key: true|
+|buyer|references|foreign_key: true|
 |trading_status|integer|null: false|
 |name|string|null: false|
 |introduction|text|null: false|
-|category_id|references|null: false, foreign_key: true|
-|item_condition_id|references|null: false, foreign_key: true|
-|shipping_fee_payer_id|references|null: false, foreign_key: true|
-|shipping_area_id|references|null: false, foreign_key: true|
-|preparation_day_id|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
 |price|integer|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_tp :seller, foreign_key: "seller_id", class_name: "User"
-- belongs_tp :buyer, foreign_key: "seller_id", class_name: "User"
+- belongs_to :seller, foreign_key: "seller_id", class_name: "User"
+- belongs_to :buyer, foreign_key: "buyer_id", class_name: "User"
 - belongs_to :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_fee_payer
@@ -56,7 +50,7 @@
 ## Credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false|
 
@@ -66,26 +60,22 @@
 ## Destinationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|destination_first_name|string|null: false|
-|destination_family_name|string|null: false|
-|destination_first_name_kana|string|null: false|
-|destination_family_name_kana|string|null: false|
-|post_code|integer|null: false|
-|prefecture|string|null: false|
+|post_code|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|-|
 |phone_number|string|-|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
+- belongs_to_active_hash :prefecture
 
 ## Item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-|image1_url|string|null: false|
+|item|references|null: false, foreign_key: true|
+|image_url|string|null: false|
 
 ### Association
 - belongs_to :item
@@ -110,7 +100,7 @@
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_image_id|references|null: false, foreign_key: true|
+|item_image|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to_active_hash :brand
@@ -126,8 +116,8 @@
 ## Bookmarksテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -136,8 +126,8 @@
 ## Commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 |comment|text|null: false|
 |-|timestamps|null: false|
 
