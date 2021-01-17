@@ -1,3 +1,60 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.Body{
+  box-sizing: border-box;
+  display: block;
+  background-color: #f8f8f8;
+  .Contents{
+    padding: 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    .Contents__Inner{
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      .Item{
+        padding: 24px 40px 40px;
+        .Item__Name{
+          text-align: center;
+          font-weight: bold;
+          font-size: 24px;
+          display: block;
+          margin-block-start: 0.83em;
+          margin-block-end: 0.83em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+        }
+        .Item__Images{
+          margin: 16px 0 0;
+          .Item__Images__Inner{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            .Item__Image{
+              display: flex;
+              position: relative;
+            }
+          }
+        }
+        .Item__Subimages{
+          height: 60px;
+          width: 300px;
+          margin: 0 auto;
+          display: flex;
+          .Item__Subimage{
+            width: 60px;
+            height: 60px;
+            position: relative;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}
