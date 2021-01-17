@@ -24,7 +24,6 @@
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
 |trading_status|integer|null: false|
-|item_image|string|null: false|
 |name|string|null: false|
 |introduction|text|null: false|
 |category_id|references|null: false, foreign_key: true|
@@ -36,8 +35,8 @@
 
 ### Association
 - belongs_to :user
-- belongs_tp :seller, class_name: "User"
-- belongs_tp :buyer, class_name: "User"
+- belongs_tp :seller, foreign_key: "seller_id", class_name: "User"
+- belongs_tp :buyer, foreign_key: "seller_id", class_name: "User"
 - belongs_to :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :shipping_fee_payer
@@ -82,6 +81,11 @@
 ### Association
 - belongs_to :user
 
+## Item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|image1_url|string|null: false|
 
 ## 以降は今後追加実装予定の項目である
 ### Usersテーブル
@@ -95,8 +99,10 @@
 ### Association
 #### Bookmark機能
 - has_many :bookmarks, dependent: :destroy
+- has_many :items, through: bookmarks, dependent: :destroy
 #### コメント機能
 - has_many :comments, dependent: :destroy
+- has_many :items, through: comments, dependent: :destroy
 
 ## Itemsテーブル
 |Column|Type|Options|
@@ -109,8 +115,10 @@
 - has_many :item_images, dependent: :destroy
 #### Bookmark機能
 - has_many :bookmarks, dependent: :destroy
+- has_many :users, through: bookmarks, dependent: :destroy
 #### コメント機能
 - has_many :comments, dependent: :destroy
+- has_many :users, through: comments, dependent: :destroy
 
 ## Bookmarksテーブル
 |Column|Type|Options|
@@ -137,8 +145,10 @@
 ## Item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-url|string|null: false|
+|image2_url|string|-|
+|image3_url|string|-|
+|image4_url|string|-|
+|image5_url|string|-|
 
 ### Association
 - belongs_to :product
