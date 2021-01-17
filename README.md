@@ -50,7 +50,7 @@
 |ancestry|string|null: false, add_index|
 
 ### Association
-- has_many :products
+- has_many :items
 - has_ancestry
 
 ## Credit_cardsテーブル
@@ -86,6 +86,9 @@
 |------|----|-------|
 |item_id|references|null: false, foreign_key: true|
 |image1_url|string|null: false|
+
+### Association
+- belongs_to :item
 
 ## 以降は今後追加実装予定の項目である
 ### Usersテーブル
@@ -124,23 +127,23 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 
 ## Commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 |comment|text|null: false|
 |-|timestamps|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 
 ## Item_imagesテーブル
 |Column|Type|Options|
@@ -149,6 +152,3 @@
 |image3_url|string|-|
 |image4_url|string|-|
 |image5_url|string|-|
-
-### Association
-- belongs_to :product
