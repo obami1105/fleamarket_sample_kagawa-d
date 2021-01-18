@@ -54,6 +54,73 @@
             overflow: hidden;
           }
         }
+        .Item__Price{
+          margin: 24px 0 24px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          .Item__Price__Price{
+            font-size: 46px;
+            font-weight: bold;
+            margin: 0 10px 0 0;
+          }
+          .Item__PriceTax{
+            font-size: 16px;
+          }
+        }
+        .Item__Status{
+          margin: 0;
+          padding: 0;
+          .Item__Status__Status{
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 0;
+            cursor: not-allowed;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            border: 1px solid transparent;
+            text-align: center;
+            background-color: #ccc;
+            color: #333;
+          }
+        }
+        .Item__Title{
+          margin-top: 15px;
+          font-size: 18px;
+          margin-bottom: 30px;
+        }
+        .Item__Tables{
+          margin-bottom: 20px;
+          .Item__Table{
+            width: 100%;
+            height: 375px;
+            border-collapse: collapse;
+            border: 1px solid #f8f8f8;
+            .Item__TableBody{
+              display: table-row-group;
+              vertical-align: middle;
+              tr{
+                display: table-row;
+                th{
+                  width: 20%;
+                  background-color: #eee;
+                  font-weight: 400;
+                  padding: 8px;
+                  border: 1px solid #dedede;
+                  font-size: 14px;
+                  text-align: center;
+                }
+                td{
+                      width: 61%;
+                    padding: 15px 15px;
+                    border: 1px solid #dedede;
+                    font-size: 14px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
