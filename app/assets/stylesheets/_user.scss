@@ -1,12 +1,24 @@
-.top {
-  height: 128px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  background-color: gray;
+.all {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  background: whitesmoke;
+  font-size: 14px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
-.top_-Icon {
+header {
+  height: 128px;
+  text-align: center;
+}
+
+h1 {
+  margin: 40px 0 0;
+  display:inline-block;
+}
+.image {
+  width: 185px;
+  height: 49px;
 }
 
 .title {

@@ -1,90 +1,91 @@
-.header.top
-  .Icon.top-Icon
-    =link_to image_tag(src= "")
-  %h1.title FURIMA
-  
-.contents.row
-  .container
-    %h2 会員情報入力
-    = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-      = devise_error_messages!
-      .field
-        = f.label :ニックネーム
-        %a.caution 必須
-        %br/
-        = f.text_field :nickname, autofocus: true, maxlength: "6"
-      .field
-        = f.label :メールアドレス
-        %a.caution 必須
-        %br/
-        = f.email_field :emai
-      .field
-        = f.label :パスワード
-        - if @minimum_password_length
+.all.all
+  %header
+    %h1
+      %a{href: ""}
+        %img.image{src: "/assets/material/logo/logo.png"}/
+    
+  .contents.row
+    .container
+      %h2 会員情報入力
+      = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = devise_error_messages!
+        .field
+          = f.label :ニックネーム
           %a.caution 必須
-        %br/
-        = f.password_field :password, autocomplete: "off"
-      .field
-        = f.label :パスワード
-        %a.caution 必須
-        %br/
-        = f.password_field :password_confirmation, autocomplete: "off"
-      %h4 本人確認
-      %h5 安心・安全にご利用いただくために、お客さまの本人
-      %h5 情報の登録にご協力ください。他のお客さまに公開さ
-      %h5 れることはありません。
-      .field
-        = f.label :お名前（全角）
-        %a.caution 必須
-        .field__boxes.br/
-        = f.text_field :family_name
-        %br/
-        = f.text_field :first_name
-      .field
-        = f.label :お名前カナ（全角）
-        %a.caution 必須
-        .field__boxes.br/
-        = f.text_field :family_name_kana
-        %br/
-        = f.text_field :first_name_kana
-      .field
-        = f.label :生年月日
-        %a.caution 必須
-        %br/
-        = f.date_field :date
-        %h5 ※ 本人情報は正しく入力してください。会員登録後、
-        %h5 修正するにはお時間を頂く場合があります。
-      %h4配送先住所
-      .field
-        = f.label :郵便番号
-        %a.caution 必須
-        %br/
-        = f.number_field :post_code
-      .field
-        = f.label :都道府県
-        %a.caution 必須
-        %br/
-        = f.text_field :prefecture
-      .field
-        = f.label :市区町村
-        %a.caution 必須
-        %br/
-        = f.text_field :city
-      .field
-        = f.label :番地
-        %a.caution 必須
-        %br/
-        = f.text_field :house_number
-      .field
-        = f.label :建物名
-        %a.normal 任意
-        %br/
-        = f.text_field :building_name
-      .field
-        = f.label :電話番号
-        %a.caution 必須
-        %br/
-        = f.phone_field :phone_number
-      
-      .actions
-        = f.submit "Sign up"
+          %br/
+          = f.text_field :nickname, autofocus: true, maxlength: "6"
+        .field
+          = f.label :メールアドレス
+          %a.caution 必須
+          %br/
+          = f.email_field :emai
+        .field
+          = f.label :パスワード
+          - if @minimum_password_length
+            %a.caution 必須
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        .field
+          = f.label :パスワード
+          %a.caution 必須
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+        %h4 本人確認
+        %h5 安心・安全にご利用いただくために、お客さまの本人
+        %h5 情報の登録にご協力ください。他のお客さまに公開さ
+        %h5 れることはありません。
+        .field
+          = f.label :お名前（全角）
+          %a.caution 必須
+          .field__boxes.br/
+          = f.text_field :family_name
+          %br/
+          = f.text_field :first_name
+        .field
+          = f.label :お名前カナ（全角）
+          %a.caution 必須
+          .field__boxes.br/
+          = f.text_field :family_name_kana
+          %br/
+          = f.text_field :first_name_kana
+        .field
+          = f.label :生年月日
+          %a.caution 必須
+          %br/
+          = f.date_field :date
+          %h5 ※ 本人情報は正しく入力してください。会員登録後、
+          %h5 修正するにはお時間を頂く場合があります。
+        %h4配送先住所
+        .field
+          = f.label :郵便番号
+          %a.caution 必須
+          %br/
+          = f.number_field :post_code
+        .field
+          = f.label :都道府県
+          %a.caution 必須
+          %br/
+          = f.text_field :prefecture
+        .field
+          = f.label :市区町村
+          %a.caution 必須
+          %br/
+          = f.text_field :city
+        .field
+          = f.label :番地
+          %a.caution 必須
+          %br/
+          = f.text_field :house_number
+        .field
+          = f.label :建物名
+          %a.normal 任意
+          %br/
+          = f.text_field :building_name
+        .field
+          = f.label :電話番号
+          %a.caution 必須
+          %br/
+          = f.phone_field :phone_number
+        
+        .actions
+          = f.submit "Sign up"
