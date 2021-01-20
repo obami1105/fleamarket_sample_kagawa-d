@@ -1,0 +1,25 @@
+.Header
+  .Header__contents
+    .HeaderTop
+      .Logo
+        = link_to image_tag('logo/logo.png', alt:'FURIMA'), root_path
+      .SearchBox
+        = form_with(url: '#', local: true, method: :get, class: 'Form') do |f|
+          =f.text_field :keyword, placeholder: 'キーワードから探す', class: 'Form__inputText'
+          %button{type: 'submit', class: 'Form__searchBtn'}
+            = image_tag('icon/icon-search 1.png')
+    .Navbar
+      %ul.LeftNavLists
+        %li.NavLists__Item
+          = link_to '#' do
+            = image_tag('icon/icon_category.png', class:'NavIcon')
+            = 'カテゴリから探す'
+        %li.NavLists__Item
+          =link_to '#' do
+            = image_tag('icon/icon_brand.png', class:'NavIcon')
+            = 'ブランドから探す'
+      %ul.RightNavLists
+        %li.NavLists__Item
+          =link_to 'ログイン', '#', class: 'Btn--line'
+        %li.NavLists__Item
+          =link_to '新規会員登録', '#', class: 'Btn'

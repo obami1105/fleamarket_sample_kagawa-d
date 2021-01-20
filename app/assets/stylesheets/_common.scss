@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Sans',
+    'Hiragino Kaku Gothic ProN', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+.Btn {
+  @include btn();
+  &--line {
+    @include btn-line();
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1020px;
+  width: 100%;
+}
+
+.Header {
+  padding: 0 40px;
+  background-color: #fff;
+  &__contents {
+    margin: 0 auto;
+    padding: 15px 0 8px;
+    max-width: 1040px;
+    width: 100%;
+  }
+}
+
+.HeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .Logo {
+    margin-right: 50px;
+    a {
+      display: block;
+      width: 140px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .SearchBox {
+    width: 100%;
+    .Form {
+      display: flex;
+      width: 100%;
+      &__inputText {
+        padding: 0 0 0 5px;
+        width: calc(100% - 38px);
+        height: 38px;
+        height: 38px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+        background-color: #f5f5f5;
+        font-size: 16px;
+        line-height: 1.4em;
+      }
+      &__searchBtn {
+        padding: 8px;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 0 4px 4px 0;
+        background-color: #3ccace;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  .LeftNavLists,
+  .RightNavLists {
+    display: flex;
+  }
+}
+
+.LeftNavLists {
+  .NavLists__Item {
+    padding: 0 30px 0 16px;
+    line-height: 38px;
+  }
+  a {
+    color: #333;
+    font-weight: 500;
+    .NavIcon {
+      height: 14px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.RightNavLists {
+  .NavLists__Item {
+    padding-left: 16px;
+    a {
+      display: block;
+      padding: 0 10px;
+      line-height: 32px;
+      &.Btn {
+        border: 1px solid $color-main;
+      }
+      &.Btn--line {
+        border-color: $color-link;
+        color: $color-link;
+        transition: all 0.3s ease-out 0s;
+        &:hover {
+          background-color: $color-link;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.Footer {
+  padding: 60px 0;
+  background-color: #272727;
+  color: #fff;
+  text-align: center;
+  a {
+    color: #fff;
+  }
+  &__contents {
+    display: flex;
+    margin: 0 auto 16px;
+    max-width: 840px;
+  }
+  &__box {
+    padding: 0 10px;
+    width: calc(1 / 3 * 100%);
+    &--hed {
+      margin: 0 0 20px 0;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    ul {
+      a {
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  &__logo {
+    a {
+      display: block;
+      margin: 0 auto;
+      width: 160px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.AppBanner {
+  position: relative;
+  padding: 100px 40px;
+  background-image: image-url('pict/bg-appBanner-pict.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__contents {
+    text-align: center;
+  }
+  &__title {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(#000, 0.4);
+    letter-spacing: 0.04em;
+    font-size: 24px;
+  }
+  &__text {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(#000, 0.4);
+    font-size: 36px;
+  }
+  &__btnList {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    li:first-child {
+      margin-right: 10px;
+    }
+    a {
+      display: block;
+      width: 180px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.SellBtn {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  font-size: 18px;
+  a {
+    display: block;
+    padding: 20px 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $color-main;
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  span {
+    display: block;
+  }
+  img {
+    width: 50px;
+  }
+}
