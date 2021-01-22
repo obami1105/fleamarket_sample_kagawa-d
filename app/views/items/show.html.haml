@@ -51,3 +51,43 @@
                 %tr
                   %th 発送日の目安
                   %td
+          .OptionArea
+            %ul
+              %a
+                %li.Favolite
+                  = icon('fas', 'star',)
+                  お気に入り
+                  %span.Counts 5
+            %ul
+              %a
+                %li.Report
+                  = icon('fas', 'star',class: "StarIcon")
+                  不適切な商品の通報
+              
+        .Comment
+          %ul.CommentForm
+          = form_with(url: "#", local: true, method: :post, class: "Form") do |f|
+            %textarea
+            %p.NoticeMsg 
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %br
+            %button{type: "submit", class: "FormSendBtn"}
+              = icon("far", "fa-comment")
+        .RelatedItemsUserSection
+          %a さばさんのその他の出品
+          .RelatedItemsUser
+            .RelatedItemUser
+              %a(href="#")
+                %figure.ItemImage
+                  = link_to image_tag(src="https://housefoods.jp/_sys/catimages/recipe/hfrecipe/items/00023060/0.485-310.jpeg")
+                .ItemText
+                  %h3.ItemName うどん
+                  .ItemPrice
+                    %ul
+                      %li 5,000円
+                      %li
+                        = icon('fas', 'star',class: "StarIcon")
+                        4
+                    %p (税込)

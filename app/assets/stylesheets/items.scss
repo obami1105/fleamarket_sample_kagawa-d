@@ -121,6 +121,97 @@
             }
           }
         }
+        .OptionArea{
+          display: flex;
+          justify-content: space-between;
+          ul{
+            margin: 10px 0 0;
+            display: flex;
+            list-style: none;
+            a{
+              color: #0099e8;
+              text-decoration: none;
+              .Favolite{
+                margin-right: auto;
+                padding: 6px 10px;
+                border-radius: 40px;
+                color: #3CCACE;
+                border: 1px solid #ffb340;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      .Comment{
+        padding: 24px;
+        background-color: #fff;
+        margin: 10px 0;
+        text-align: center;
+        box-sizing: border-box;
+        .CommentForm{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: block;
+          .Form{
+            margin: 0;
+            padding: 0;
+            .textarea{
+              margin: 0 auto;
+              width: 100%;
+              min-height: 104px;
+              padding: 10px;
+              resize: none;
+            }
+            .NoticeMsg{
+              padding: 8px;
+              font-size: 14px;
+              background-color: #f8f8f8;
+              margin: 10px 0;
+              text-align: left;
+            }
+          }
+        }
+      }
+      .RelatedItemsUserSection{
+        a{
+          display: block;
+          margin: 24px 0 8px;
+          color: #3CCACE;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 22px;
+          position: relative;
+        }
+        .RelatedItemsUser{
+          margin: 26px auto;
+          display: flex;
+          flex-wrap: wrap;
+          .RelatedItemUser{
+            width: 220px;
+            display: inline-block;
+            margin-right: 20px;
+            a{
+              background-color: #fff;
+              display: inline-block;
+              text-decoration: none;
+              position: relative;
+              margin: 24px 0 8px;
+              color: #3CCACE;
+              font-weight: bold;
+              font-size: 22px;
+              .ItemImage{
+                width: 220px;
+                height: 150px;
+                position: relative;
+                overflow: hidden;
+                margin: 0;
+                display: block;
+              }
+            }
+          }
+        }
       }
     }
   }
