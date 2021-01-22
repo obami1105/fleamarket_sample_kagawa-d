@@ -1,0 +1,62 @@
+-# ヘッダー変更する
+= render 'layouts/header' 
+
+.MainItem
+  = form_with model: @Item, url: new_item_path, id: 'new_item', class: 'new_item', local: true do |f|
+    .Item__contents
+      %label.image 出品画像
+      %span.required 必須
+      %p.photo 最大5枚までアップロードできます
+      .Image__box
+        .Image__file
+        .Image__item
+          %label.form__box
+            .Image__box
+              %icon (fas fa-camera)
+              %p.pic クリックしてファイルをアップロード
+    %hr.line
+    .Item__contents
+      .Form__group
+        %label.Item__name 商品名
+        %span.required 必須
+        %input.Form__inputText{"placeholder": "40文字まで", "type": "text"}
+      .Form__group
+        %label.Item__detail 商品の説明
+        %span.required 必須
+        %textarea.Form__inputText{"placeholder": "商品の説明（必須1,000文字以内）
+        （色、素材、重さ、定価、注意点など）
+        例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", "type": "text"}
+      .Item__contents
+        %span.0 "/1000"
+    %hr.line
+    .Item__contents 
+      %p.box 商品の詳細
+      .Item__category
+        %label.category カテゴリー
+        %span.required 必須
+        %select.category__tag
+      .Item__conditions
+        %label.conditions 商品の状態
+        %span.required 必須
+        %select.conditions__tag
+    %hr.line
+    .Item__contents
+    %hr.line
+    .Item__contents
+    %hr.line
+    .Item__second__contents
+    %hr.line
+    .Item__second__contents
+    %hr.line
+-# ここから下のコードは仮置きです
+.Fotter
+  .Fotter__box
+    %p.UserName hogehoge
+    %ul.Main__menu
+      %li.Main__new-group NEW GROUP
+      %li#featured.Main__editUser EDIT USER
+  .Form
+  %form.Form__contents
+    .Form__inputBox
+      %input.Form__inputText{"placeholder": "type a message", "type": "text"}
+    %input.Form__submitBtn{"name": "commit", "type": "submit", "value": "Send"}
