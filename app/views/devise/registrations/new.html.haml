@@ -2,7 +2,7 @@
   %header
     %h1
       %a{href: ""}
-        %img.image{src: "/assets/logo/logo.png"}/
+        %img{src: "/assets/logo/logo.png"}
     
   .contents
     %h2 会員情報入力
@@ -13,80 +13,78 @@
           .field
             = f.label :ニックネーム
             %a.caution 必須
-            %br/
-            = f.text_field :nickname, autofocus: true, maxlength: "6"
+            = f.text_field :nickname, autofocus: true, placeholder: "例）フリマ太郎", maxlength: "6"
           .field
             = f.label :メールアドレス
             %a.caution 必須
-            %br/
-            = f.email_field :emai
+            = f.email_field :emai, placeholder: "PC・携帯どちらでも可"
           .field
             = f.label :パスワード
             - if @minimum_password_length
               %a.caution 必須
-            %br/
-            = f.password_field :password, autocomplete: "off"
+            = f.password_field :password, placeholder: "6文字以上の半角英数字", autocomplete: "off"
           .field
             = f.label :パスワード
             %a.caution 必須
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "off"
-          %h4 本人確認
-          %h5 安心・安全にご利用いただくために、お客さまの本人
-          %h5 情報の登録にご協力ください。他のお客さまに公開さ
-          %h5 れることはありません。
+            = f.password_field :password_confirmation, placeholder: "上記と同じものを入力してください", autocomplete: "off"
+          .field
+            %h3 本人確認
+            %p1 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
           .field
             = f.label :お名前（全角）
             %a.caution 必須
-            .field__boxes.br/
-            = f.text_field :family_name
-            %br/
-            = f.text_field :first_name
+            .box
+              = f.text_field :family_name, placeholder: "例）香川", class: 'input__half__left'
+              = f.text_field :first_name, placeholder: "例）太郎", class: 'input__half__right'
           .field
             = f.label :お名前カナ（全角）
             %a.caution 必須
-            .field__boxes.br/
-            = f.text_field :family_name_kana
-            %br/
-            = f.text_field :first_name_kana
+            .box
+              = f.text_field :family_name_kana, placeholder: "例）カガワ", class: 'input__half__left'
+              = f.text_field :first_name_kana, placeholder: "例）タロウ", class: 'input__half__right'
           .field
             = f.label :生年月日
             %a.caution 必須
-            %br/
-            = f.date_field :date
-            %h5 ※ 本人情報は正しく入力してください。会員登録後、
-            %h5 修正するにはお時間を頂く場合があります。
-          %h4配送先住所
+            .box
+            = f.date_select :birthday, {use_month_numbers: true, start_year: Time.now.year, end_year: 1901, prompt:"-----"} , {class:'birthday'}
+            .p2 ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .field
+            %h3 配送先住所
           .field
             = f.label :郵便番号
             %a.caution 必須
-            %br/
-            = f.number_field :post_code
+            = f.text_field :post_code, placeholder: "例）760-0023"
           .field
             = f.label :都道府県
             %a.caution 必須
-            %br/
-            = f.text_field :prefecture
+            = f.text_field :post_code, placeholder: "選択してください"
+            -#active-hashが準備できたら下記を参考に変更
+            -#= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "select"}
           .field
             = f.label :市区町村
             %a.caution 必須
-            %br/
-            = f.text_field :city
+            = f.text_field :city, placeholder: "例）高松市"
           .field
             = f.label :番地
             %a.caution 必須
-            %br/
-            = f.text_field :house_number
+            = f.text_field :house_number, placeholder: "例）寿町１−１−１１" 
           .field
             = f.label :建物名
             %a.normal 任意
-            %br/
-            = f.text_field :building_name
+            = f.text_field :building_name, placeholder: "例）高松駅前ビル５階"
           .field
             = f.label :電話番号
             %a.caution 必須
-            %br/
-            = f.phone_field :phone_number
-          
-          .actions
-            = f.submit "Sign up"
+            = f.phone_field :phone_number, placeholder: "例）087-1234-5678"
+            = f.submit "登録する", class: 'sign_up_button'
+
+  %footer
+    %ul
+      %li プライバシーポリシー
+      %li フリマ利用規約
+      %li 特定商取引に関する表記
+    %h1
+      %a{href: ""}
+        %img{src: "/assets/logo/logo.png"}
+    %p.small @FURIMA
+        

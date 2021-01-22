@@ -17,7 +17,7 @@ h1 {
   display:inline-block;
 }
 
-.image {
+img {
   width: 185px;
   height: 49px;
 }
@@ -51,148 +51,112 @@ h2 {
 .caution {
   color: white;
   background-color: red;
-  padding: 3px;
-  font-size: 15px;
+  padding: 2px 4px;
+  margin: 0 0 0 8px;
+  font-size: 12px;
 }
 
+input {
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  width: 100%;
+  margin: 8px 0 0;
+}
+
+.input__half__left {
+  width: calc(50% - 6px);
+  margin-right: 10px;
+}
+
+.input__half__right {
+  width: calc(50% - 6px);
+}
+
+.box {
+  display: flex;
+}
 .normal {
-  color: white;
-  background-color: gray;
-  padding: 3px;
-  font-size: 15px;
+  background-color: #bfbfbf;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 4px;
+  margin-left: 8px;
+  border-radius: 2px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4em;
 }
 
 .field {
-  margin: 15px 0px;
+  margin: 24px 0 0;
 }
 .field__boxes {
   display: flex;
   justify-content: space-between;
 }
 
-h4 {
-  margin-block-start: 1.33em;
-  margin-block-end: 1.33em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+label {
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 16px;
   font-weight: bold;
 }
 
-h5 {
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+.birthday {
+  height: 48px;
+  width: calc((100% - 10px) / 3);
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.AccountPage__title {
-  width: 50%;
-  font-size: 14px;
-  font-weight: 200;
-
-  h2 {
-    margin-bottom: 10px;
-    letter-spacing: 3px;
-    font-size: 40px;
-    &:after {
-      content: "";
-      display: block;
-      width: 60px;
-      margin-top: 5px;
-      border-bottom: 1px solid #38aef0;
-    }
-  }
-
-  .Button {
-    margin-top: 40px;
-    color: #fff;
-    background-color: #ccc;
-  }
+p {
+  margin: 8px 0 0;
 }
 
-.AccountPage__form {
-  width: 50%;
+.p2 {
+  margin: 8px 0 0;
+  color: #888;
 }
 
-.FormField {
-  margin-bottom: 10px;
-  &__label--normal {
-    padding: 10px 0;
-    letter-spacing: 1px;
-    font-size: 14px;
-    font-weight: 200;
-    i {
-      font-size: 11px;
-    }
-    .field_with_errors {
-      display: inline-block;
-      color: #d65f4c;
-      font-weight: 400;
-    }
-  }
-  &__input--normal {
-    input {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 10px;
-      letter-spacing: 1px;
-    }
-    .field_with_errors {
-      position: relative;
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 5px;
-        background-color: #d65f4c;
-      }
-    }
-  }
-}
-
-.Button {
-  display: inline-block;
-  height: 50px;
-  padding: 0 30px;
-  line-height: 50px;
-  letter-spacing: 1px;
-  text-align: center;
-  border: none;
-  border-radius: 2px;
-  text-decoration: none;
-}
-
-.UserButton {
-  margin-top: 20px;
+.sign_up_button {
+  margin-top: 40px;
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
   color: #fff;
-  background-color: #38aef0;
 }
 
-#error_explanation {
-  margin: 20px 0;
-  padding: 20px 30px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
+footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
 
-  h2 {
-    margin-bottom: 10px;
-    color: #d65f4c;
-    font-size: 14px;
-  }
+ul {
+  display: flex;
+  justify-content: center;
+}
 
-  ul {
-    margin: 0;
-    padding-left: 17px;
-    list-style: square;
-  }
+li {
+  color: #333;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 8px;
+}
 
-  li {
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
-  }
+.small {
+  font-size: small;
 }
