@@ -56,11 +56,21 @@
         %select.section__second
     %hr.line
     .Item__contents
-    %hr.line
+      %p.box  価格（¥300〜9,999,999)
+      .Price
+        .Price__section
+          %label.section 販売価格
+          %span.required 必須
+        %span.section__box ¥
+        %input.Form__inputPrice{"placeholder": 0, name: 'item[price]', id: 'item_price',"type": "number"}
+      .Price__second
+        .Price__box 販売手数料(10%)
+        %span.Value ー
+      %hr.Line__line
+      .Item__second__contents
+        .Profit 販売利益
+        %span.Value ー
     .Item__second__contents
-    %hr.line
-    .Item__second__contents
-    %hr.line
 -# ここから下のコードは仮置きです
 .Fotter
   %b Fotter
