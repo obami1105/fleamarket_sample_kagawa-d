@@ -1,8 +1,8 @@
 .all
   %header
     %h1
-      %a{href: ""}
-        %img{src: "/assets/logo/logo.png"}
+      %a{href: "/"}
+        = image_tag 'logo/logo.png'
     
   .contents
     %h2 会員情報入力
@@ -45,9 +45,9 @@
           .field
             = f.label :生年月日
             %a.caution 必須
-            .box
-            = f.date_select :birthday, {use_month_numbers: true, start_year: Time.now.year, end_year: 1901, prompt:"-----"} , {class:'birthday'}
-            .p2 ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+            .birthday
+            != sprintf( f.date_select(:birthday, prefix:'birthday',with_css_classes:'birthday', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'    
+          .p2 ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。 
           .field
             %h3 配送先住所
           .field
@@ -76,7 +76,7 @@
             = f.label :電話番号
             %a.caution 必須
             = f.phone_field :phone_number, placeholder: "例）087-1234-5678"
-            = f.submit "登録する", class: 'sign_up_button'
+            = f.submit "登録する", class: 'sign_up_btn'
 
   %footer
     %ul
@@ -84,7 +84,7 @@
       %li フリマ利用規約
       %li 特定商取引に関する表記
     %h1
-      %a{href: ""}
-        %img{src: "/assets/logo/logo.png"}
+      %a{href: "/"}
+        = image_tag 'logo/logo-gray.png'
     %p.small @FURIMA
         
