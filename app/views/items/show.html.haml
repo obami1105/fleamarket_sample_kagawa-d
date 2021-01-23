@@ -1,3 +1,5 @@
+= render 'layouts/header'
+
 %body
   .Body
     .Contents
@@ -7,10 +9,10 @@
           .Item__Images
             .Item__Images__Inner
               .Item__Image
-                = image_tag 'ご飯.png', alt:'Item'
+                = image_tag 'pict2/ご飯.png', alt:'Item'
           .Item__Subimages
             .Item__Subimage
-              = image_tag '梅干し.jpeg', alt:'Item'
+              = image_tag 'pict2/梅干し.jpeg', alt:'Item'
           .Item__Price
             %span.Item__Price__Price ¥5,000
             .Item__PriceTax
@@ -61,7 +63,7 @@
             %ul
               %a
                 %li.Report
-                  = icon('fas', 'star',class: "StarIcon")
+                  = icon('fa', 'flag',class: "StarIcon")
                   不適切な商品の通報
               
         .Comment
@@ -82,7 +84,7 @@
             .RelatedItemUser
               %a.Item__Wrapper(href="#")
                 .ItemImage
-                  = image_tag 'mac.jpg', alt:'Item'
+                  = image_tag 'pict2/mac.jpg', alt:'Item'
                 .ItemText
                   %h3.ItemName うどん
                   .ItemPrice
@@ -95,7 +97,7 @@
             .RelatedItemUser
               %a.Item__Wrapper(href="#")
                 .ItemImage
-                  = image_tag 'mac.jpg', alt:'Item'
+                  = image_tag 'pict2/mac.jpg', alt:'Item'
                 .ItemText
                   %h3.ItemName うどん
                   .ItemPrice
@@ -108,7 +110,7 @@
             .RelatedItemUser
               %a.Item__Wrapper(href="#")
                 .ItemImage
-                  = image_tag 'mac.jpg', alt:'Item'
+                  = image_tag 'pict2/mac.jpg', alt:'Item'
                 .ItemText
                   %h3.ItemName うどん
                   .ItemPrice
@@ -124,7 +126,7 @@
             .RelatedItemUser
               %a.Item__Wrapper(href="#")
                 .ItemImage
-                  = image_tag 'mac.jpg', alt:'Item'
+                  = image_tag 'pict2/mac.jpg', alt:'Item'
                 .ItemText
                   %h3.ItemName うどん
                   .ItemPrice
@@ -137,7 +139,7 @@
             .RelatedItemUser
               %a.Item__Wrapper(href="#")
                 .ItemImage
-                  = image_tag 'mac.jpg', alt:'Item'
+                  = image_tag 'pict2/mac.jpg', alt:'Item'
                 .ItemText
                   %h3.ItemName うどん
                   .ItemPrice
@@ -150,7 +152,7 @@
             .RelatedItemUser
               %a.Item__Wrapper(href="#")
                 .ItemImage
-                  = image_tag 'mac.jpg', alt:'Item'
+                  = image_tag 'pict2/mac.jpg', alt:'Item'
                 .ItemText
                   %h3.ItemName うどん
                   .ItemPrice
@@ -160,3 +162,5 @@
                         = icon('fas', 'star',class: "StarIcon")
                         4
                     %p (税込)
+
+= render 'layouts/footer'
