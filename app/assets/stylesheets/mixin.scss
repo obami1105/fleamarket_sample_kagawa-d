@@ -1,0 +1,22 @@
+@mixin clearfix() {
+  &:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+@mixin btn($bgColor: $color-main) {
+  border-radius: 4px;
+  background-color: $bgColor;
+  color: #fff;
+  text-align: center;
+}
+
+@mixin btn-line($borderColor: #333) {
+  border: 1px solid $borderColor;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
