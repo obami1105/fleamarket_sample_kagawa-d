@@ -7,10 +7,10 @@
           .Item__Images
             .Item__Images__Inner
               .Item__Image
-              = link_to image_tag(src= "https://img.cpcdn.com/cms_article_images/2000331/560/ee0c384291e1cb90fa31da4fac8001a2?p=1464830056")
+                = image_tag 'ご飯.png', alt:'Item'
           .Item__Subimages
             .Item__Subimage
-              = link_to image_tag(src= "https://item-shopping.c.yimg.jp/i/j/bunza_41009999")
+              = image_tag '梅干し.jpeg', alt:'Item'
           .Item__Price
             %span.Item__Price__Price ¥5,000
             .Item__PriceTax
@@ -74,14 +74,83 @@
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
               %br
             %button{type: "submit", class: "FormSendBtn"}
-              = icon("far", "fa-comment")
+              %i.fa.fa-comment
+              コメントする
         .RelatedItemsUserSection
           %a さばさんのその他の出品
           .RelatedItemsUser
             .RelatedItemUser
-              %a(href="#")
-                %figure.ItemImage
-                  = link_to image_tag(src="https://housefoods.jp/_sys/catimages/recipe/hfrecipe/items/00023060/0.485-310.jpeg")
+              %a.Item__Wrapper(href="#")
+                .ItemImage
+                  = image_tag 'mac.jpg', alt:'Item'
+                .ItemText
+                  %h3.ItemName うどん
+                  .ItemPrice
+                    %ul
+                      %li 5,000円
+                      %li
+                        = icon('fas', 'star',class: "StarIcon")
+                        4
+                    %p (税込)
+            .RelatedItemUser
+              %a.Item__Wrapper(href="#")
+                .ItemImage
+                  = image_tag 'mac.jpg', alt:'Item'
+                .ItemText
+                  %h3.ItemName うどん
+                  .ItemPrice
+                    %ul
+                      %li 5,000円
+                      %li
+                        = icon('fas', 'star',class: "StarIcon")
+                        4
+                    %p (税込)
+            .RelatedItemUser
+              %a.Item__Wrapper(href="#")
+                .ItemImage
+                  = image_tag 'mac.jpg', alt:'Item'
+                .ItemText
+                  %h3.ItemName うどん
+                  .ItemPrice
+                    %ul
+                      %li 5,000円
+                      %li
+                        = icon('fas', 'star',class: "StarIcon")
+                        4
+                    %p (税込)
+        .RelatedItemsUserSection
+          %a その他の関連商品
+          .RelatedItemsUser
+            .RelatedItemUser
+              %a.Item__Wrapper(href="#")
+                .ItemImage
+                  = image_tag 'mac.jpg', alt:'Item'
+                .ItemText
+                  %h3.ItemName うどん
+                  .ItemPrice
+                    %ul
+                      %li 5,000円
+                      %li
+                        = icon('fas', 'star',class: "StarIcon")
+                        4
+                    %p (税込)
+            .RelatedItemUser
+              %a.Item__Wrapper(href="#")
+                .ItemImage
+                  = image_tag 'mac.jpg', alt:'Item'
+                .ItemText
+                  %h3.ItemName うどん
+                  .ItemPrice
+                    %ul
+                      %li 5,000円
+                      %li
+                        = icon('fas', 'star',class: "StarIcon")
+                        4
+                    %p (税込)
+            .RelatedItemUser
+              %a.Item__Wrapper(href="#")
+                .ItemImage
+                  = image_tag 'mac.jpg', alt:'Item'
                 .ItemText
                   %h3.ItemName うどん
                   .ItemPrice
