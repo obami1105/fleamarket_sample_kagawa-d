@@ -67,10 +67,14 @@
         .Price__box 販売手数料(10%)
         %span.Value ー
       %hr.Line__line
-      .Item__second__contents
+      .Price__third
         .Profit 販売利益
         %span.Value ー
-    .Item__second__contents
+    .Contents
+      .Contents_second
+        = f.submit "出品する", class: "form__submit"
+        = link_to '下書きに保存する', "#" , class: "Save_btn"
+        = link_to 'もどる', "/" , class: "Save_btn"
 -# ここから下のコードは仮置きです
 .Fotter
   %b Fotter
