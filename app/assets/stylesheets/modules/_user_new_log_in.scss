@@ -60,14 +60,9 @@
     }
     &__under {
       padding: 32px 64px;
-      &__action {
-        background: #3CCACE;
-        border: 1px solid #3CCACE;
-        color: #fff;
-      }
       .log_in_btn {
-        background: #3CCACE;
-        border: 1px solid #3CCACE;
+        background: $color-main;
+        border: 1px solid $color-main;
         color: #fff;
         font-size: 14px;
         margin: 24px 0 0;
