@@ -1,4 +1,5 @@
--# ヘッダー変更する
+-# ヘッダーを下記へ変更する（ユーザーページをマージ後）
+-# = render 'layouts/header_user'
 = render 'layouts/header' 
 
 .MainItem
@@ -23,12 +24,13 @@
       .Form__group__second
         %label.Item__name 商品の説明
         %span.required 必須
+        -# 下記コード差替（Activehash実装後）
         %textarea.Form__inputText__second{"placeholder": "商品の説明（必須1,000文字以内）
         （色、素材、重さ、定価、注意点など）
         例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", "type": "text"}
       .Item__Bottom
         %span 0 /1000
-    %hr.line
+    %hr.Line
     .Item__contents 
       %p.box 商品の詳細
       .Item__box
@@ -38,43 +40,67 @@
       .Item__box
         %label.section 商品の状態
         %span.required 必須
+        -# 下記コード差替（Activehash実装後）
         %select.section__second
-    %hr.line
+    %hr.Line
     .Item__contents
       %p.box 配送について
       .Item__box
         %label.section 配送料負担
         %span.required 必須
+        -# 下記コード差替（Activehash実装後）
         %select.section__second
       .Item__box
         %label.section 発送元の地域
         %span.required 必須
+        -# 下記コード差替（Activehash実装後）
         %select.section__second
       .Item__box
         %label.section 発送までの日数
         %span.required 必須
+        -# 下記コード差替（Activehash実装後）
         %select.section__second
-    %hr.line
+    %hr.Line
     .Item__contents
-      %p.box  価格（¥300〜9,999,999)
+      %p.box
+      価格（¥300〜9,999,999)
       .Price
         .Price__section
           %label.section 販売価格
           %span.required 必須
         %span.section__box ¥
+        -# 下記コード差替（Activehash実装後）
         %input.Form__inputPrice{"placeholder": 0, name: 'item[price]', id: 'item_price',"type": "number"}
       .Price__second
-        .Price__box 販売手数料(10%)
+        .Price__box
+          販売手数料(10%)
         %span.Value ー
-      %hr.Line__line
+      %hr.Line
       .Price__third
-        .Profit 販売利益
+        .Profit
+          販売利益
         %span.Value ー
-    .Contents
+    .Contents__first
       .Contents_second
         = f.submit "出品する", class: "form__submit"
         = link_to '下書きに保存する', "#" , class: "Save_btn"
-        = link_to 'もどる', "/" , class: "Save_btn"
--# ここから下のコードは仮置きです
+        = link_to 'もどる', "/" , class: "Bach_btn"
+    .Contents__rule
+      .Contents__sub
+        %p
+          禁止されている
+          = link_to '行為', "/items/new", class: "law" 
+          および
+          = link_to '出品物', "/items/new", class: "law"
+          を必ずご確認ください。
+          = link_to '偽ブランド品', "/items/new", class: "law"
+          や
+          = link_to '盗難品', "/items/new", class: "law"
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          = link_to '加盟店規約', "/items/new", class: "law"
+          に同意したことになります。
+
+-# フッターを下記へ変更する（ユーザーページをマージ後）
+-# = render 'layouts/footer_user'
 .Fotter
   %b Fotter
