@@ -3,7 +3,7 @@
 .Contents
   .Contents__Inner
     .Item
-      %h.Item__Name ご飯
+      %p.Item__Name ご飯
       .Item__Images
         .Item__Images__Inner
           .Item__Image
@@ -20,13 +20,13 @@
         .Item__Status__Status
           売り切れました！
       .Item__Title
-        ごはん！！
+        ごはん
       .Item__Tables
         %table.Item__Table
           %tbody.Item__TableBody
             %tr
               %th 出品者
-              %td お腹がへった
+              %td saba
             %tr
               %th カテゴリー
               %td 
@@ -53,13 +53,13 @@
               %td
       .OptionArea
         %ul.FavUl
-          %a.FavTag
+          =link_to "#",class: "FavTag" do
             %li.Favolite
               = icon('fas', 'star')
               お気に入り
               %span.Counts 5
         %ul.FavUl
-          %a.FavTag
+          =link_to "#",class: "FavTag" do
             %li.Report
               = icon('fa', 'flag')
               不適切な商品の通報
@@ -67,24 +67,25 @@
     .Comment
       %ul.CommentForm
       = form_with(url: "#", local: true, method: :post, class: "Form") do |f|
-        %textarea.CommentText
+        =f.text_area :hoge ,class: "CommentText"
         %p.NoticeMsg 
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
           %br
-        %button{type: "submit", class: "FormSendBtn"}
+        =button_tag type:"submit", class: "FormSendBtn" do
           = icon('fa', 'comment')
           コメントする
     .RelatedItemsUserSection
-      %a.SectionTitle さばさんのその他の出品
+      =link_to "#", class: "SectionTitle" do
+        さばさんのその他の出品
       .RelatedItemsUser
         .RelatedItemUser
-          %a.Item__Wrapper(href="#")
+          =link_to "#", class: "Item__Wrapper" do
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %h3.ItemName うどん
+              %p.ItemName うどん
               .ItemPrice
                 %ul.PriceUl
                   %li.Priceli 5,000円
@@ -93,11 +94,11 @@
                     4
                 %p.Tax (税込)
         .RelatedItemUser
-          %a.Item__Wrapper(href="#")
+          =link_to "#", class: "Item__Wrapper" do
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %h3.ItemName うどん
+              %p.ItemName うどん
               .ItemPrice
                 %ul.PriceUl
                   %li.Priceli 5,000円
@@ -106,11 +107,24 @@
                     4
                 %p.Tax (税込)
         .RelatedItemUser
-          %a.Item__Wrapper(href="#")
+          =link_to "#", class: "Item__Wrapper" do
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %h3.ItemName うどん
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
               .ItemPrice
                 %ul.PriceUl
                   %li.Priceli 5,000円
@@ -119,14 +133,14 @@
                     4
                 %p.Tax (税込)
     .RelatedItemsUserSection
-      %a その他の関連商品
+      %a.SectionTitle その他の関連商品
       .RelatedItemsUser
         .RelatedItemUser
-          %a.Item__Wrapper(href="#")
+          =link_to "#", class: "Item__Wrapper" do
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %h3.ItemName うどん
+              %p.ItemName うどん
               .ItemPrice
                 %ul.PriceUl
                   %li.Priceli 5,000円
@@ -135,11 +149,11 @@
                     4
                 %p.Tax (税込)
         .RelatedItemUser
-          %a.Item__Wrapper(href="#")
+          =link_to "#", class: "Item__Wrapper" do
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %h3.ItemName うどん
+              %p.ItemName うどん
               .ItemPrice
                 %ul.PriceUl
                   %li.Priceli 5,000円
@@ -148,11 +162,24 @@
                     4
                 %p.Tax (税込)
         .RelatedItemUser
-          %a.Item__Wrapper(href="#")
+          =link_to "#", class: "Item__Wrapper" do
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %h3.ItemName うどん
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
               .ItemPrice
                 %ul.PriceUl
                   %li.Priceli 5,000円
