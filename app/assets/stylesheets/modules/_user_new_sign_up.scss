@@ -1,0 +1,91 @@
+//ユーザー新規登録画面
+.user__all__user_sign_up {
+  .contents {
+    width: 700px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    display: block;
+    justify-content: center;
+    &__main {
+      padding: 40px 40px 64px;
+      &__block {
+        margin: 0 auto;
+        max-width: 343px;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 22px;
+    padding: 32px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .caution {
+    color: white;
+    background-color: red;
+    padding: 2px 4px;
+    margin: 0 0 0 8px;
+    font-size: 12px;
+  }
+
+  .input__half__left {
+    width: calc(50% - 6px);
+    margin-right: 10px;
+  }
+  .input__half__right {
+    width: calc(50% - 6px);
+  }
+
+  .box {
+    display: flex;
+  }
+  .normal {
+    background-color: #bfbfbf;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 4px;
+    margin-left: 8px;
+    border-radius: 2px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .birthday {
+    display: flex;
+    margin: 8px 0 0;
+  }
+
+  .year,.month,.day {
+    height: 48px;
+    width: calc((100% - 55px) / 3);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .p1 {
+    margin: 8px 0 0;
+  }
+
+  .p2 {
+    margin: 8px 0 0;
+    color: #888;
+  }
+
+  .sign_up_btn {
+    margin-top: 40px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+  }
+}
