@@ -32,7 +32,7 @@
               height: 100%;
               display: flex;
               position: relative;
-              img{
+              .ItemIMG{
                 width: 100%;
                 height: 100%;
               }
@@ -49,7 +49,7 @@
             height: 60px;
             position: relative;
             overflow: hidden;
-            img{
+            .ItemSubIMG{
               width: 100%;
               height: 100%;
             }
@@ -125,11 +125,11 @@
         .OptionArea{
           display: flex;
           justify-content: space-between;
-          ul{
+          .FavUl{
             margin: 10px 0 0;
             display: flex;
             list-style: none;
-            a{
+            .FavTag{
               color: #0099e8;
               text-decoration: none;
               .Favolite{
@@ -170,7 +170,7 @@
           display: block;
         }
         .Form{
-          textarea{
+          .CommentText{
             margin: 0 auto;
             width: 100%;
             min-height: 104px;
@@ -195,7 +195,7 @@
         }
       }
       .RelatedItemsUserSection{
-        a{
+        .SectionTitle{
           display: block;
           margin: 24px 0 8px;
           color: #3CCACE;
@@ -228,7 +228,7 @@
                 overflow: hidden;
                 margin: 0;
                 display: block;
-                img{
+                .RelatedItemIMG{
                   width: 100%;
                   height: 100%;
                 }
@@ -247,19 +247,19 @@
                 .ItemPrice{
                   font-size: 16px;
                   text-decoration: none;
-                  ul{
+                  .PriceUl{
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     list-style: none;
                     margin: 0;
                     padding: 0;
-                    li{
+                    .Priceli{
                       display: list-item;
                       text-align: -webkit-match-parent;
                     }
                   }
-                  p{
+                  .Tax{
                     font-size: 10px;
                     text-align: left;
                     margin: 0;
