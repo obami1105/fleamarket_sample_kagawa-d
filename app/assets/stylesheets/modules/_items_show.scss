@@ -210,6 +210,9 @@
           display: flex;
           flex-wrap: wrap;
           background: #f8f8f8;
+        .RelatedItemUser:nth-of-type(3n) {
+          margin-right: 0;
+        }
           .RelatedItemUser{
             width: 220px;
             display: inline-block;
