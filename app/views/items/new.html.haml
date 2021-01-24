@@ -44,7 +44,10 @@
         %select.section__second
     %hr.Line
     .Item__contents
-      %p.box 配送について
+      %p.box
+      配送について
+      = link_to "#" do
+        =icon('fa', 'question-circle', class: 'Image__Qicon')
       .Item__box
         %label.section 配送料負担
         %span.required 必須
@@ -64,12 +67,13 @@
     .Item__contents
       %p.box
       価格（¥300〜9,999,999)
+      = link_to "#" do
+        =icon('fa', 'question-circle', class: 'Image__Qicon')
       .Price
         .Price__section
           %label.section 販売価格
           %span.required 必須
         %span.section__box ¥
-        -# 下記コード差替（Activehash実装後）
         %input.Form__inputPrice{"placeholder": 0, name: 'item[price]', id: 'item_price',"type": "number"}
       .Price__second
         .Price__box
