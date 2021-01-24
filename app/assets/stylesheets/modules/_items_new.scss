@@ -1,3 +1,4 @@
+  // 写真：第１セクション（※本文は確認頂いた後に削除します）
 .MainItem {
   margin: 0px auto;
   max-width: 700px;
@@ -78,20 +79,11 @@
     width: 100%;
   }
   .Line {
-    border-top-color: #efefef;
-    border-left: 0 solid #efefef;
-    border-bottom: 0 solid #efefef;
-    border-right: 0 solid #efefef;
-    border-top-style: solid;
-    border-top-width: 1px;
     margin: 0;
+    border: none;
+    border-top: solid 1px #efefef;
   }
-
-
-  // 商品名
-  // .Form__group {
-  //   margin: 0;
-  // }
+  // 商品名：第２セクション（※本文は確認頂いた後に削除します）
   .Item__name {
     font-size: 14px;
     font-weight: 600;
@@ -135,10 +127,7 @@
     text-align: right;
     margin-top: 16px;
   }
-
-
-
-// 商品カテゴリー
+// 商品の詳細・商品の配送について：第２・３セクション（※本文は確認頂いた後に削除します）
   .box {
     color: #888888;
     font-size: 14px;
@@ -168,9 +157,7 @@
     width: 100%;
     margin-top: 16px;
   }
-
-
-// 価格
+// 価格：第５セクション（※本文は確認頂いた後に削除します）
   .Price {
     padding-top: 0px !important;
     -webkit-box-align: center;
@@ -213,10 +200,7 @@
     margin-right: auto;
     white-space: nowrap;
   }
-  .Value {
-
-  }
-  // 不要なため削除
+  // 不要なため削除しました（※本文は確認頂いた後に削除します）
   // .Line__line{
   //   border-top-color: #efefef;
   //   border-left: 0 solid #efefef;
@@ -237,6 +221,7 @@
     margin-right: auto;
     white-space: nowrap;
   }
+  // ボタン類：第６セクション（※本文は確認頂いた後に削除します）
   .Contents__first {
     background-color: #fff;
     padding-bottom: 32px;
@@ -245,56 +230,31 @@
     margin: 0px auto;
     width: 360px;
   }
-  .form__submit {
-    background: #3CCACE;
-    border: 1px solid #3CCACE;
-    color: #fff;
-    font-size: 17px;
+  .form__submit,
+  .Save_btn {
+    padding: 0 20px;
     min-height: 48px;
-    padding: 0 24px;
-    font-weight: 600;
-    display: block;
     width: 100%;
-    line-height: 48px;
-    border-radius: 4px;
-    transition: all ease-out .3s;
-    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+  }
+  .Save_btn,
+  .Bach_btn {
+    display: block;
+    margin-top: 24px;
     text-align: center;
-    font-family: inherit;
-    margin: 0;
+  }
+  .form__submit {
+    border: 1px solid $color-main;
+    @include btn(#3CCACE);
   }
   .Save_btn {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20px;
-    font-size: 17px;
-    min-height: 48px;
-    padding: 0 24px;
-    font-weight: 600;
+    @include btn(#ccc);
+    color: #000;
     line-height: 48px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    transition: all ease-out .3s;
-    cursor: pointer;
-    text-align: center;
-    background-color: #ccc;
-    color: #333;
-    text-decoration: none;
-    box-sizing: border-box;
   }
-  .Bach_btn {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20px;
-    color: #0099e8;
-    text-decoration: none;
-  }
+
+  // 規約関連：第７セクション追加分の記述です（※本文は確認頂いた後に削除します）
   .Contents__rule{
     background-color: #fff;
     padding-bottom: 32px;
@@ -318,9 +278,7 @@
     }
   }
 }
-
-
-// 仮置き
+// 仮置（ユーザーページをマージ後に削除）
 .Fotter {
   right: 0;
   bottom: 0;
