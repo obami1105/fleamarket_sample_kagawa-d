@@ -1,4 +1,4 @@
-  // 写真：第１セクション（※本文は確認頂いた後に削除します）
+  // 写真：第１セクション
 .MainItem {
   margin: 0px auto;
   max-width: 700px;
@@ -83,7 +83,7 @@
     border: none;
     border-top: solid 1px #efefef;
   }
-  // 商品名：第２セクション（※本文は確認頂いた後に削除します）
+  // 商品名：第２セクション
   .Item__name {
     font-size: 14px;
     font-weight: 600;
@@ -127,7 +127,7 @@
     text-align: right;
     margin-top: 16px;
   }
-// 商品の詳細・商品の配送について：第２・３セクション（※本文は確認頂いた後に削除します）
+// 商品の詳細・商品の配送について：第２・３セクション
   .box {
     color: #888888;
     font-size: 14px;
@@ -161,7 +161,7 @@
     font-weight: 400;
     color: #0099e8;
   }
-// 価格：第５セクション（※本文は確認頂いた後に削除します）
+// 価格：第５セクション
   .Price {
     padding-top: 0px !important;
     -webkit-box-align: center;
@@ -204,14 +204,6 @@
     margin-right: auto;
     white-space: nowrap;
   }
-  // 不要なため削除しました（※本文は確認頂いた後に削除します）
-  // .Line__line{
-  //   border-top-color: #efefef;
-  //   border-left: 0 solid #efefef;
-  //   border-bottom: 0 solid #efefef;
-  //   border-right: 0 solid #efefef;
-  //   margin: 0;
-  // }
   .Price__third {
     padding-bottom: 0px !important;
     -webkit-box-align: center;
@@ -225,7 +217,7 @@
     margin-right: auto;
     white-space: nowrap;
   }
-  // ボタン類：第６セクション（※本文は確認頂いた後に削除します）
+  // ボタン類：第６セクション
   .Contents__first {
     background-color: #fff;
     padding-bottom: 32px;
@@ -257,8 +249,7 @@
     color: #000;
     line-height: 48px;
   }
-
-  // 規約関連：第７セクション追加分の記述です（※本文は確認頂いた後に削除します）
+  // 規約関連：第７セクション追加分
   .Contents__rule{
     background-color: #fff;
     padding-bottom: 32px;
@@ -281,20 +272,4 @@
       text-decoration: none;
     }
   }
-}
-// 仮置（ユーザーページをマージ後に削除）
-.Fotter {
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: 456px;
-  height: 220px;
-  margin: 0 auto;
-  padding: 40px 0;
-  text-align: center;
-  font-size: 14px;
-  display: block;
-  background: skyblue;
-  color: white;
 }

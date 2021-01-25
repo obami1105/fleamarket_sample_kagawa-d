@@ -1,7 +1,5 @@
 -# ヘッダーを下記へ変更する（ユーザーページをマージ後）
 -# = render 'layouts/header_user'
-= render 'layouts/header' 
-
 .MainItem
   = form_with model: @Item, url: new_item_path, id: 'new_item', class: 'new_item', local: true do |f|
     .Item__contents
@@ -103,8 +101,5 @@
           などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
           = link_to '加盟店規約', "/items/new", class: "law"
           に同意したことになります。
-
 -# フッターを下記へ変更する（ユーザーページをマージ後）
 -# = render 'layouts/footer_user'
-.Fotter
-  %b Fotter
