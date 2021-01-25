@@ -6,9 +6,9 @@
       %label.image 出品画像
       %span.required 必須
       %p.photo 最大5枚までアップロードできます
-      .Image__box
-        .Image__file
-        .Image__field
+      .ImageBox
+        .ImageBox__file
+        .ImageBox__field
           %label.Image__group
             .Image__box__second
               =icon('fa', 'camera', class: 'Image__icon')
@@ -25,7 +25,7 @@
         -# 下記コード差替（Activehash実装後）
         %textarea.Form__inputText__second{"rows":7, "placeholder": "商品の説明（必須1,000文字以内）
         （色、素材、重さ、定価、注意点など）
-        例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", "type": "text"}
+        \n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", "type": "text"}
       .Item__Bottom
         %span 0 /1000
     %hr.Line
@@ -42,12 +42,12 @@
         %select.section__second
     %hr.Line
     .Item__contents
-      %p.box
-      配送について
-      = link_to "#" do
-        =icon('fa', 'question-circle', class: 'Image__Qicon')
+      %p.box 
+        配送について
+        = link_to "#" do
+          =icon('fa', 'question-circle', class: 'Image__Qicon')
       .Item__box
-        %label.section 配送料負担
+        %label.section 配送料の負担
         %span.required 必須
         -# 下記コード差替（Activehash実装後）
         %select.section__second
@@ -63,10 +63,10 @@
         %select.section__second
     %hr.Line
     .Item__contents
-      %p.box
-      価格（¥300〜9,999,999)
-      = link_to "#" do
-        =icon('fa', 'question-circle', class: 'Image__Qicon')
+      %p.box 
+        価格（¥300〜9,999,999)
+        = link_to "#" do
+          =icon('fa', 'question-circle', class: 'Image__Qicon')
       .Price
         .Price__section
           %label.section 販売価格
@@ -83,11 +83,11 @@
           販売利益
         %span.Value ー
     .Contents__first
-      .Contents_second
+      .Contents__second
         = f.submit "出品する", class: "form__submit"
         = link_to '下書きに保存する', "#" , class: "Save_btn"
         = link_to 'もどる', "/" , class: "Bach_btn"
-    .Contents__rule
+    .Contents__first
       .Contents__sub
         %p
           禁止されている
