@@ -1,0 +1,191 @@
+= render 'layouts/header'
+
+.Contents
+  .Contents__Inner
+    .Item
+      %p.Item__Name ご飯
+      .Item__Images
+        .Item__Images__Inner
+          .Item__Image
+            = image_tag 'pict2/ご飯.png', alt:'Item', class:"ItemIMG"
+      .Item__Subimages
+        .Item__Subimage
+          = image_tag 'pict2/梅干し.jpeg', alt:'Item', class:"ItemSubIMG"
+      .Item__Price
+        %span.Item__Price__Price ¥5,000
+        .Item__PriceTax
+          %span (税込)
+          %span 送料込み
+      .Item__Status
+        .Item__Status__Status
+          売り切れました！
+      .Item__Title
+        ごはん
+      .Item__Tables
+        %table.Item__Table
+          %tbody.Item__TableBody
+            %tr
+              %th 出品者
+              %td saba
+            %tr
+              %th カテゴリー
+              %td 
+            %tr
+              %th サイズ
+              %td
+            %tr
+              %th ブランド
+              %td
+            %tr
+              %th 商品の状態
+              %td
+            %tr
+              %th 配送料の負担
+              %td
+            %tr
+              %th 配送の方法
+              %td
+            %tr
+              %th 発送元の地域
+              %td
+            %tr
+              %th 発送日の目安
+              %td
+      .OptionArea
+        %ul.FavUl
+          =link_to "#",class: "FavTag" do
+            %li.Favolite
+              = icon('fas', 'star')
+              お気に入り
+              %span.Counts 5
+        %ul.FavUl
+          =link_to "#",class: "FavTag" do
+            %li.Report
+              = icon('fa', 'flag')
+              不適切な商品の通報
+          
+    .Comment
+      %ul.CommentForm
+      = form_with(url: "#", local: true, method: :post, class: "Form") do |f|
+        =f.text_area :hoge ,class: "CommentText"
+        %p.NoticeMsg 
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %br
+        =button_tag type:"submit", class: "FormSendBtn" do
+          = icon('fa', 'comment')
+          コメントする
+    .RelatedItemsUserSection
+      =link_to "#", class: "SectionTitle" do
+        さばさんのその他の出品
+      .RelatedItemsUser
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+    .RelatedItemsUserSection
+      %a.SectionTitle その他の関連商品
+      .RelatedItemsUser
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+        .RelatedItemUser
+          =link_to "#", class: "Item__Wrapper" do
+            .ItemImage
+              = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
+            .ItemText
+              %p.ItemName うどん
+              .ItemPrice
+                %ul.PriceUl
+                  %li.Priceli 5,000円
+                  %li.Priceli
+                    = icon('fas', 'star')
+                    4
+                %p.Tax (税込)
+
+= render 'layouts/footer'
