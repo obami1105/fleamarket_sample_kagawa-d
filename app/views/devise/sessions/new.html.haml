@@ -25,6 +25,6 @@
           .field
             = f.password_field :password, autocomplete: "off", placeholder: "パスワード"
             = f.submit "ログイン", class: 'log_in_btn'
-            = link_to 'パスワードをお忘れの方', "", class: 'pass_forget'
+            = link_to 'パスワードをお忘れの方', "#", class: 'pass_forget'
 
     = render 'layouts/footer_user'
