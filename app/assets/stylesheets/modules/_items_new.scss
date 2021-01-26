@@ -1,4 +1,4 @@
-  // 写真：第１セクション
+// 写真：第１セクション
 .MainItem {
   margin: 0px auto;
   max-width: 700px;
@@ -178,7 +178,7 @@
   .section__box {
     margin-right: 8px;
   }
-  .Form__inputPrice {
+  .Form__input__price {
     height: 48px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -228,10 +228,10 @@
   }
   .form__submit,
   .Save_btn {
-    padding: 0 20px;
+    padding: 0 24px;
     min-height: 48px;
     width: 100%;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 17px;
   }
   .Save_btn,
@@ -251,10 +251,10 @@
   }
   // 規約関連：第７セクション追加分
   .Contents__sub{
-  margin: 0px 40px 32px;
-  font-size: 12px;
-  line-height: 1.4em;
-  }
+    margin: 0px 40px 32px;
+    font-size: 12px;
+    line-height: 1.4em;
+    }
   .p{
     display: block;
     margin-block-start: 1em;
