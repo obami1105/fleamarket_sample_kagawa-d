@@ -54,7 +54,7 @@
     transition: all 0.5s ease-out 0s;
     margin-top: 16px;
   }
-  .Image__group {
+  .ImageBox__group__input__image__hidden {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,11 +62,18 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+    box-sizing: border-box;
+  }
+  .ImageBox__group__form {
+    display: none;
   }
   .Image__box__second {
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
   }
   .Image__icon {
     font-size: 20px;
