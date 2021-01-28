@@ -11,7 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(sign_up_params)
     unless @user.valid?
-      flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
     session["devise.regist_data"] = {user: @user.attributes}
@@ -24,7 +23,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(session["devise.regist_data"]["user"])
     @destination = Destination.new(destination_params)
     unless @destination.valid?
-      flash.now[:alert] = @destination.errors.full_messages
       render :new_destination and return
     end
     @user.build_destination(@destination.attributes)
