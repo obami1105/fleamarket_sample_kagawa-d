@@ -5,3 +5,5 @@ Rails.application.routes.draw do
   # root :to => 'items#purchase', as: 'purchase'
   resources :items, only: [:new,:show]
   end
+  resources :items, only: [:new, :show]
+end
