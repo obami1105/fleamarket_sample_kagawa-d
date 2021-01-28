@@ -3,7 +3,12 @@
     = render 'layouts/header_user'
 
     .contents
-      %h2 登録が完了しました
-      = link_to "トップへ戻る", root_path
-
+      %h2 会員登録完了
+      .DoneMessage
+        .DoneMessage__inner
+          %p
+            会員登録が完了しました
+            %br>/
+            FURIMAをお楽しみください
+          =link_to 'トップへ戻る', root_path, class: 'Btn'
     = render 'layouts/footer_user'
