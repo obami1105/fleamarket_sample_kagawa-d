@@ -1,3 +1,27 @@
 .user__all
-    = render 'layouts/header_user'
-    .Buy
+  = render 'layouts/header_user'
+
+  .Confirmation
+    .Confirmation__SubField
+      %h2.Caption　購入内容の確認
+    .PurchaseField
+      .Information
+        .Information__group
+          %figure.Information__item
+            =image_tag '' ,alt:'Item', class:"Item__Img"
+        .Information__text
+          %p.Information__Field
+            子猫です
+          %p.FeePrice
+            %span.FeePrice__Fee 送料込（税込）
+            %span.FeePrice__Price
+              ¥10,000,000
+    .PurchaseField
+
+    .PurchaseField
+
+    .PurchaseField
+
+    .CreditCardField
+
+  = render 'layouts/footer_user'
