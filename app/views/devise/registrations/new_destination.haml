@@ -5,7 +5,7 @@
     .contents
       %h2 会員情報入力
       .contents__main
-        = form_for @destination do |f|
+        = form_with model: @destination, local: true do |f|
           = render "devise/shared/error_messages", resource: @destination
           .contents__main__block
             .field
@@ -32,7 +32,7 @@
               = f.text_field :building_name, placeholder: "例）高松駅前ビル５階"
             .field
               = f.label :電話番号
-              %span.caution 必須
+              %span.normal 任意
               = f.phone_field :phone_number, placeholder: "例）08712345678"
               = f.submit "登録する", class: 'sign_up_btn'
     = render 'layouts/footer_user'
