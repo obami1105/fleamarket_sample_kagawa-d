@@ -1,0 +1,104 @@
+.user__all
+  = render 'layouts/header_user'
+
+  .MainItem
+    = form_with id: 'new_item', class: 'new_item', local: true do |f|
+      .Item__contents
+        %label.image 出品画像
+        %span.required 必須
+        %p.photo １枚のみアップロードできます
+        .ImageBox
+          .ImageBox__file
+          .ImageBox__field
+            = f.label :image, class: 'ImageBox__group__input__image__hidden' do
+              = f.file_field :image,class: 'ImageBox__group__form'
+              .Image__box__second
+                =icon('fa', 'camera', class: 'Image__icon')
+                %p.pic クリックしてファイルをアップロード
+      %hr.Line
+      .Item__contents
+        .Form__group
+          %label.Item__name 商品名
+          %span.required 必須
+          = f.text_field :name, class: "Form__inputText", placeholder: '40文字まで'
+        .Form__group__second
+          %label.Item__name 商品の説明
+          %span.required 必須
+          = f.text_area :introduction, class: "Form__inputText__second", rows: "7", placeholder: "商品の説明（必須1,000文字以内）\n(色、素材、重さ、定価、注意点など）\n\n 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        .Item__Bottom
+          %span 0 /1000
+      %hr.Line
+      .Item__contents 
+        %p.box 商品の詳細
+        .Item__box
+          %label.section カテゴリー
+          %span.required 必須
+          %select.section__second
+        .Item__box
+          %label.section 商品の状態
+          %span.required 必須
+          -# 下記コード差替（Activehash実装後）
+          %select.section__second
+      %hr.Line
+      .Item__contents
+        %p.box 
+          配送について
+          = link_to "#" do
+            =icon('fa', 'question-circle', class: 'Image__Qicon')
+        .Item__box
+          %label.section 配送料の負担
+          %span.required 必須
+          -# 下記コード差替（Activehash実装後）
+          %select.section__second
+        .Item__box
+          %label.section 発送元の地域
+          %span.required 必須
+          -# 下記コード差替（Activehash実装後）
+          %select.section__second
+        .Item__box
+          %label.section 発送までの日数
+          %span.required 必須
+          -# 下記コード差替（Activehash実装後）
+          %select.section__second
+      %hr.Line
+      .Item__contents
+        %p.box 
+          価格（¥300〜9,999,999）
+          = link_to "#" do
+            =icon('fa', 'question-circle', class: 'Image__Qicon')
+        .Price
+          .Price__section
+            %label.section 販売価格
+            %span.required 必須
+          %span.section__box ¥
+          = f.text_field :price, class: "Form__input__price", placeholder: '０'
+        .Price__second
+          .Price__box
+            販売手数料（10%）
+          %span.Value ー
+        %hr.Line
+        .Price__third
+          .Profit
+            販売利益
+          %span.Value ー
+      .Contents__first
+        .Contents__second
+          = f.submit "出品する", class: "form__submit"
+          = link_to "下書きに保存する", "#" , class: "Save_btn"
+          = link_to "もどる", root_path , class: "Bach_btn"
+      .Contents__first
+        .Contents__sub
+          %p
+            禁止されている
+            = link_to '行為', "#" , class: "law" 
+            および
+            = link_to '出品物', "#", class: "law"
+            を必ずご確認ください。
+            = link_to '偽ブランド品', "#", class: "law"
+            や
+            = link_to '盗難品', "#", class: "law"
+            などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+            = link_to '加盟店規約', "#" , class: "law"
+            に同意したことになります。
+
+  = render 'layouts/footer_user'

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
+  resources :items, only: [:new, :show]
 end
