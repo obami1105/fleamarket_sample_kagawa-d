@@ -8,7 +8,7 @@
       .Information
         .Information__group
           %figure.Information__item
-            =image_tag 'pict2/ご飯.png' ,alt:'Item', class:"Item__Img"
+            = image_tag 'pict2/ご飯.png' ,class:"Item__Img"
         .Information__text
           %p.Information__Field
             ♡白米ちゃんやで♡
@@ -26,7 +26,7 @@
         .PaymentMethod__text
           %h3 支払い方法
         -# リンク先変更＊サーバーサイド実装後
-        %a{href:"#", class: "PaymentMethod__Credit" }
+        = link_to "#", class: "PaymentMethod__Credit" do
           =icon('fa', 'plus-circle')
           %span 登録して下さい
     .PurchaseField
