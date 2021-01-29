@@ -21,9 +21,13 @@
         %span 支払金額
         %span#PaymentPrice
           ¥10,000
-
     .PurchaseField
-
+      .PaymentMethod
+        .PaymentMethod__text
+          %h3 支払い方法
+        %a{href:"#", class: "PaymentMethod__Credit" }
+          =icon('fa', 'plus-circle')
+          %span 登録して下さい
     .PurchaseField
 
     .CreditCardField
