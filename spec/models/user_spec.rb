@@ -29,14 +29,14 @@ describe User do
       expect(another_user.errors[:email]).to include("はすでに存在します")
     end
 
-    it "emailが空では登録できないこと" do
-      @user.email = nil
+    it 'emailに@が含まれていない場合登録できないこと' do
+      @user.email = "aaa＠aaa.com"
       @user.valid?
-      expect(@user.errors[:email]).to include("を入力してください")
+      expect(@user.errors[:email]).to include("は不正な値です")
     end
 
-    it 'emailは@とドメインがなければ登録できないこと' do
-      @user.email = "aaa＠aaa,com"
+    it 'emailにドメインが含まれていない場合登録できないこと' do
+      @user.email = "aaa@aaa,com"
       @user.valid?
       expect(@user.errors[:email]).to include("は不正な値です")
     end
