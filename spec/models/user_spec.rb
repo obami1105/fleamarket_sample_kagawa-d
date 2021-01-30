@@ -30,7 +30,7 @@ describe User do
     end
 
     it 'emailに@が含まれていない場合登録できないこと' do
-      @user.email = "aaa＠aaa.com"
+      @user.email = "aaaaaa.com"
       @user.valid?
       expect(@user.errors[:email]).to include("は不正な値です")
     end
