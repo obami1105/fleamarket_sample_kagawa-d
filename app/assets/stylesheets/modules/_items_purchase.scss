@@ -1,0 +1,144 @@
+// 第1セクション
+.Confirmation {
+  max-width: 700px;
+  margin: 0px auto;
+  width: 100%;
+  background-color: white;
+  &__SubField{
+    margin: 0px auto;
+    padding: 32px 16px;
+    max-width: 375px;
+  }
+}
+h2{
+  text-align: center;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+// 第2セクション
+.PurchaseField{
+  border-top: 1px solid whitesmoke;
+  margin: 0px auto;
+  padding: 32px 16px;
+  max-width: 375px;
+}
+.Information{
+  display: flex;
+  justify-content: space-between;
+  &__group{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+}
+.Information__item{
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0;
+  overflow: hidden;
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+.Item__Img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80px;
+  max-height: 80px;
+}
+.Information__text{
+  width: 100%;
+  margin-left: 16px;
+}
+.Information__Field{
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-bottom: 8px;
+}
+.FeePrice{
+  text-align: right;
+}
+.FeePrice__Fee{
+  font-size: 12px;
+  text-align: right;
+}
+.FeePrice__Price{
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 8px;
+  text-align: right;
+}
+// 第3セクション
+.PaymentAmount{
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+#PaymentPrice{
+  font-size: 24px;
+}
+// 第４セクション
+.PaymentMethod__text{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 16px;
+  h3{font-size: 14px;
+    font-weight: 600;
+  }
+}
+.PaymentMethod__Credit{
+  $color-link: #0095ee;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: auto;
+  text-decoration: none;
+  span{
+    margin-left: 4px;
+  }
+}
+// 第５セクション
+.Address{
+  &__Field{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 16px;
+    h3{
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}
+.Address__Information{
+  p{
+    line-height: 1.4em;
+  }
+}
+// 第6セクション
+.CreditCardField{
+  padding: 32px 16px 56px;
+  border-top: 1px solid whitesmoke;
+  margin: 0px auto;
+  max-width: 375px;
+}
