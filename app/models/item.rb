@@ -14,9 +14,9 @@ class Item < ApplicationRecord
     # validates :seller
     # validates :trading_status
     validates :name
-    validates :ntroduction
+    validates :introduction
     validates :category
-    validates :item_condition_id
+    validates :condition_id
     validates :shipping_fee_payer_id
     validates :prefecture_id
     validates :preparation_day_id

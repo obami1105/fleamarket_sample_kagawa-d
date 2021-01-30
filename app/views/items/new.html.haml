@@ -2,7 +2,7 @@
   = render 'layouts/header_user'
 
   .MainItem
-    = form_with id: 'new_item', class: 'new_item', local: true do |f|
+    = form_with model:@item, id: 'new_item', class: 'new_item', local: true do |f|
       .Item__contents
         %label.image 出品画像
         %span.required 必須
@@ -10,11 +10,13 @@
         .ImageBox
           .ImageBox__file
           .ImageBox__field
-            = f.label :image, class: 'ImageBox__group__input__image__hidden' do
-              = f.file_field :image,class: 'ImageBox__group__form'
+            = f.label :image_url, class: 'ImageBox__group__input__image__hidden' do
+              = f.fields_for :item_image, @item.build_item_image, class: 'ImageBox__group__form' do |i|
+                = i.file_field :image_url
               .Image__box__second
-                =icon('fa', 'camera', class: 'Image__icon')
+                =icon('fa', 'camera', class: 'Image__icon') 
                 %p.pic クリックしてファイルをアップロード
+
       %hr.Line
       .Item__contents
         .Form__group
