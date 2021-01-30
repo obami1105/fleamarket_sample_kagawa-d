@@ -33,12 +33,13 @@
         .Item__box
           %label.section カテゴリー
           %span.required 必須
-          %select.section__second
+          = f.text_field :name, class: "Form__inputText", placeholder: '選択してください'
+          -# カテゴリー機能実装の際に、上記を下記を参考に変更ください
+          -# = f.collection_select :category_id,@categories, :id, :name,{include_blank: "選択してください"},{class:"section__second"}
         .Item__box
           %label.section 商品の状態
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
       %hr.Line
       .Item__contents
         %p.box 
@@ -48,18 +49,15 @@
         .Item__box
           %label.section 配送料の負担
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :shipping_fee_payer_id, ShippingFeePayer.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
         .Item__box
           %label.section 発送元の地域
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
         .Item__box
           %label.section 発送までの日数
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
       %hr.Line
       .Item__contents
         %p.box 

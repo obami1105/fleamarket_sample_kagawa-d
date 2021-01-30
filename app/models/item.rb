@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
-  belongs_to :seller, foreign_key: "seller_id", class_name: "User"
-  belongs_to :buyer, foreign_key: "buyer_id", class_name: "User"
+  # belongs_to :seller, foreign_key: "seller_id", class_name: "User"
+  # belongs_to :buyer, foreign_key: "buyer_id", class_name: "User"
   has_one :item_image, dependent: :destroy
   belongs_to :category, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -11,8 +11,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparation_day
 
   with_options presence: true do
-    validates :seller
-    validates :trading_status
+    # validates :seller
+    # validates :trading_status
     validates :name
     validates :ntroduction
     validates :category

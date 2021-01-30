@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   def index
   end
 
-  def
+  def new
     @item = Item.new
   end
 
