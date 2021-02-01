@@ -10,12 +10,12 @@
         .ImageBox
           .ImageBox__file
           .ImageBox__field
-            = f.label :image_url, class: 'ImageBox__group__input__image__hidden' do
-              = f.fields_for :item_image, @item.build_item_image, class: 'ImageBox__group__form' do |i|
-                = i.file_field :image_url
-              .Image__box__second
-                =icon('fa', 'camera', class: 'Image__icon') 
-                %p.pic クリックしてファイルをアップロード
+            = f.fields_for :item_image, @item.build_item_image do |item_image| 
+              = item_image.label :image_url, class: 'ImageBox__group__input__image__hidden' do
+                = item_image.file_field :image_url, class: 'ImageBox__group__form'
+                .Image__box__second
+                  =icon('fa', 'camera', class: 'Image__icon') 
+                  %p.pic クリックしてファイルをアップロード
 
       %hr.Line
       .Item__contents
