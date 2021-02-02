@@ -1,0 +1,27 @@
+.new_credit_cards {
+  .Exp__field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--select {
+      margin: 8px 5px 0;
+    }
+    #exp_month {
+      margin-left: 0;
+    }
+  }
+  .Text__link {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    &--right {
+      margin-top: 10px;
+      text-align: right;
+    }
+  }
+  .CardLogo {
+    margin: 5px;
+    max-width: 44px;
+    max-height: 20px;
+  }
+}
