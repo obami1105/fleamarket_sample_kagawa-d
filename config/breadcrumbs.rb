@@ -1,6 +1,26 @@
+#ルート
 crumb :root do
-  link "Home", root_path
+  link "フリマ", root_path
 end
+
+# 商品詳細 仮
+crumb :item do
+  link "ごはん", item_path
+  parent :root
+end
+
+# # #商品詳細 リンク名連動
+# crumb :item do
+#   link Item.find(params[:id]).name, item_path
+#   parent :root
+# end
+
+# crumb :item do
+#   link @item.name, item_path
+#   parent :root
+# end
+
+
 
 # crumb :projects do
 #   link "Projects", projects_path
