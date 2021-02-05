@@ -7,15 +7,13 @@
         %label.image 出品画像
         %span.required 必須
         %p.photo １枚のみアップロードできます
-        .ImageBox
-          .ImageBox__file
-          .ImageBox__field
+        .ImageBox__field
+          %label{ class: 'ImageBox__group__input__image__hidden',for:"aa"}
             = f.fields_for :item_image, @item.build_item_image do |item_image| 
-              = item_image.label :image_url, class: 'ImageBox__group__input__image__hidden' do
-                = item_image.file_field :image_url, class: 'ImageBox__group__form'
-                .Image__box__second
-                  =icon('fa', 'camera', class: 'Image__icon') 
-                  %p.pic クリックしてファイルをアップロード
+              = item_image.file_field :image_url, class: 'ImageBox__group__form',id:'aa'
+              .Image__box__second
+                =icon('fa', 'camera', class: 'Image__icon') 
+                %p.pic クリックしてファイルをアップロード
 
       %hr.Line
       .Item__contents
@@ -35,9 +33,8 @@
         .Item__box
           %label.section カテゴリー
           %span.required 必須
-          = f.text_field :name, class: "Form__inputText", placeholder: '選択してください'
-          -# カテゴリー機能実装の際に、上記を下記を参考に変更ください
-          -# = f.collection_select :category_id,@categories, :id, :name,{include_blank: "選択してください"},{class:"section__second"}
+          .category__box
+            = f.collection_select :category_id, @categories, :id, :name,{include_blank: "選択してください"},{class: "section__second item__category"}
         .Item__box
           %label.section 商品の状態
           %span.required 必須
@@ -46,6 +43,7 @@
       .Item__contents
         %p.box 
           配送について
+
           = link_to "#" do
             =icon('fa', 'question-circle', class: 'Image__Qicon')
         .Item__box
