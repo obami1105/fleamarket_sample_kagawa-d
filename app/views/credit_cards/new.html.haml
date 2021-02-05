@@ -22,10 +22,7 @@
               = f.label :有効期限
               %span.caution 必須
               .Exp__field
-                = f.select :exp_month, [['01',1],['02',2],['03',3],['04',4],['05',5],['06',6],['07',7],['08',8],['09',9],['10',10],['11',11],['12',12]],{include_blank: '---'}, class: 'Exp__field--select', name: 'exp_month', id:'exp_month'
-                %span 月
-                = f.select :exp_year, [['21',2021],['22',2022],['23',2023],['24',2024],['25',2025],['26',2026],['27',2027],['28',2028],['29',2029],['30',2030]], {include_blank: '---'}, class: 'Exp__field--select', name: 'exp_year', id:'exp_year'
-                %span 年
+                != sprintf(f.date_select(:expiration_date, with_css_classes:'Exp__field--select', prompt:'---', order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
             .field
               = f.label :セキュリティーコード
               %span.caution 必須
