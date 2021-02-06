@@ -1,104 +1,33 @@
 .SideNav
   %nav
     %ul.SideNav__lists
-      %li.NavLists__item
-        = link_to mypage_path, class: 'active' do
-          = 'マイページ'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'お知らせ'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'やることリスト'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'いいね！一覧'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '出品する'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '下書き一覧'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '出品した商品 - 出品中'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '出品した商品 - 取引中'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '出品した商品 - 売却済み'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '購入した商品 - 取引中'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '購入した商品 - 過去の取引'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'ニュース一覧'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '評価一覧'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'ガイド'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'お問い合わせ'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
+      = render partial: 'users/side_nav', locals: {path: mypage_path, text: 'マイページ'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'お知らせ'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'やることリスト'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'いいね！一覧'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '出品する'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '出品した商品 - 出品中'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '出品した商品 - 取引中'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '出品した商品 - 売却済み'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '購入した商品 - 取引中'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '購入した商品 - 過去の取引'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'ニュース一覧'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '評価一覧'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'ガイド'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'お問い合わせ'}
     %h3.SideNav__title フリペイ
     %ul.SideNav__lists
-      %li.NavLists__item
-        = link_to '#' do
-          = '売上・振込申請'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'ポイント'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
+      = render partial: 'users/side_nav', locals: {path: '#', text: '売上・振込申請'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'ポイント'}
     %h3.SideNav__title 設定
     %ul.SideNav__lists
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'プロフィール'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '発送元・お届け先住所変更'}
+      = render partial: 'users/side_nav', locals: {path: credit_cards_path, text: '支払い方法'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: 'メール/パスワード'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '本人情報'}
+      = render partial: 'users/side_nav', locals: {path: '#', text: '電話番号の確認'}
       %li.NavLists__item
-        = link_to '#' do
-          = 'プロフィール'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '発送元・お届け先住所変更'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to credit_cards_path do
-          = '支払い方法'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = 'メール/パスワード'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '本人情報'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-        = link_to '#' do
-          = '電話番号の確認'
-          = icon('fas', 'chevron-right', class: "Nav__icon")
-      %li.NavLists__item
-
-        = link_to destroy_user_session_path , method: :delete do
+        = link_to destroy_user_session_path, method: :delete do
           = 'ログアウト'
           = icon('fas', 'chevron-right', class: "Nav__icon")
