@@ -1,0 +1,68 @@
+= render 'layouts/header'
+
+%main.Mypage
+  .Mypage__inner
+    = render 'users/mypage_side'
+    .Mypage__contents
+      .Mypage__header
+        .User
+          .User__icon
+            = image_tag('icon/member_photo_noimage_thumb.png', alt:'Name')
+          %h2
+            = current_user.nickname
+          %ul.User__rating
+            %li
+              評価
+              %span 20
+            %li
+              出品数
+              %span 30
+      .Mypage__info.Tab-group1
+        %ul.MypageTabs__menu
+          %li.tab.active
+            %h3 お知らせ
+          %li.tab
+            %h3 やることリスト
+        .MypageTabs__contents.show
+          = render 'users/info'
+        .MypageTabs__contents
+          %ul.InfoLists
+            %li.InfoLists__item.NotFound
+              現在、やることリストはありません
+      .Mypage__info.Tab-group2
+        %h2 購入した商品
+        %ul.MypageTabs__menu
+          %li.tab
+            %h3 取引中
+          %li.tab.active
+            %h3 過去の取引
+        .MypageTabs__contents
+          %ul.InfoLists
+            %li.InfoLists__item.NotFound
+              取引中の商品がありません
+        .MypageTabs__contents.show
+          %ul.InfoLists
+            %li.InfoLists__item
+              = link_to '#' do
+                %figure
+                  = image_tag('sample/sample-item1.jpg', alt:'スーツケース')
+                .InfoLists__item--body
+                  .InfoLists__item--text
+                    「スーツケース」を購入しました。取引が完了しました。
+                  .Item__status.StatusLabel--done
+                    取引完了
+                  = icon('fas', 'chevron-right', class: "Nav__icon")
+            %li.InfoLists__item
+              = link_to '#' do
+                %figure
+                  = image_tag('sample/sample-item2.jpg', alt:'アンティークな懐中時計')
+                .InfoLists__item--body
+                  .InfoLists__item--text
+                    「アンティークな懐中時計」を購入しました。取引が完了しました。
+                  .Item__status.StatusLabel--done
+                    取引完了
+                  = icon('fas', 'chevron-right', class: "Nav__icon")
+            %li.InfoLists--link
+              = link_to '#' do
+                = '一覧を見る'
+= render 'layouts/footer'

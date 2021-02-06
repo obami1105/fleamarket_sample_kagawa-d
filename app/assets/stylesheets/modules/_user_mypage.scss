@@ -1,0 +1,288 @@
+.Mypage {
+  background: $white-smoke;
+
+  &__inner {
+    display: flex;
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 1020px;
+  }
+
+  &__contents {
+    width: 700px;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    height: 200px;
+    background-color: #fff;
+    background-image: image-url('pict/mypage.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  &__info {
+    margin-top: 40px;
+    background-color: #fff;
+    h2 {
+      padding-left: 16px;
+      background: $mostly-white;
+      line-height: 70px;
+    }
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+.User {
+  margin: 0 auto;
+  .User__icon {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    img {
+      width: 100%;
+    }
+  }
+  h2 {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+  .User__rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    li {
+      margin: 0 8px;
+    }
+    span {
+      margin-left: 8px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+}
+
+.MypageTabs {
+  &__menu {
+    display: flex;
+    background-color: #eee;
+    li.tab {
+      width: 50%;
+      text-align: center;
+      cursor: pointer;
+    }
+    h3 {
+      line-height: 70px;
+    }
+    .tab.active {
+      background-color: #fff;
+      h3 {
+        border-top: 2px solid $color-main;
+      }
+    }
+  }
+  &__contents {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+  &__contentsList {
+    padding: 0;
+    height: 250px;
+    li {
+      min-height: 80px;
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+.SideNav {
+  margin-right: 40px;
+  width: 280px;
+  a {
+    color: $color-text;
+  }
+
+  &__title {
+    margin: 40px 0 10px;
+  }
+}
+
+%NavIcon_style {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate(0, -50%);
+}
+
+%NavList_border {
+  border-top: 1px solid #eee;
+  list-style: none;
+  &:first-of-type {
+    border-top: none;
+  }
+}
+
+.NavLists__item {
+  @extend %NavList_border;
+  a {
+    position: relative;
+    display: block;
+    padding: 16px;
+    min-height: 48px;
+    background-color: #fff;
+    font-size: 14px;
+
+    &.active {
+      background-color: #eee;
+      .Nav__icon {
+        color: $color-text;
+      }
+    }
+    &:hover {
+      background-color: $mostly-white;
+    }
+  }
+
+  .Nav__icon {
+    color: #ccc;
+
+    @extend %NavIcon_style;
+  }
+}
+
+.InfoLists {
+  a {
+    color: $color-text;
+  }
+  &--link {
+    padding: 16px;
+    border-top: 1px solid #eee;
+    a {
+      display: block;
+      height: 55px;
+      background-color: #eee;
+      text-align: center;
+      line-height: 55px;
+
+      &:hover {
+        background-color: $mostly-white;
+      }
+    }
+  }
+  &__item {
+    position: relative;
+
+    @extend %NavList_border;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      min-height: 80px;
+      &:hover {
+        background-color: $mostly-white;
+      }
+    }
+    figure {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      width: 48px;
+      height: 48px;
+      img {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        background-color: #eee;
+      }
+    }
+  }
+  &__item--body {
+    overflow: hidden;
+    flex: 1;
+    margin: 0 40px 0 20px;
+    font-size: 14px;
+    .Item__status {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 3px 4px;
+      border-radius: 0.25rem;
+      color: #fff;
+      vertical-align: baseline;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1;
+      &.StatusLabel--done {
+        background-color: #888;
+      }
+    }
+  }
+  &__item--text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+  .Nav__icon {
+    @extend %NavIcon_style;
+  }
+  .NotFound {
+    padding: 150px 0 60px;
+    background-color: rgba(#fff, 0.8);
+    background-image: image-url('logo/logo-grayonly.png');
+    background-position: center 40px;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    color: #ccc;
+    text-align: center;
+    font-size: 16px;
+
+    background-blend-mode: lighten;
+  }
+}
+
+.Contents--card {
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 370px;
+  .Btn {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+  }
+  p {
+    text-align: right;
+    font-size: 14px;
+  }
+}
+// 共通スタイルに変更
+.Main__contents {
+  background-color: #fff;
+  h2 {
+    padding: 32px 16px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 24px;
+    line-height: 34px;
+  }
+  .Contents--narrow {
+    margin: 0 auto;
+    padding: 0 16px;
+    width: 370px;
+  }
+  section {
+    padding: 30px 0;
+  }
+}
