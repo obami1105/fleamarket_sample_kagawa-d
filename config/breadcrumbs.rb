@@ -3,6 +3,11 @@ crumb :root do
   link "フリマ", root_path
 end
 
+#マイページ
+crumb :mypage do
+  link "マイページ", mypage_path
+end
+
 # 商品詳細 仮
 crumb :item do
   link "ごはん", item_path
