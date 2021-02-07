@@ -3,9 +3,16 @@ crumb :root do
   link "フリマ", root_path
 end
 
-#マイページ
+#マイページ_親
 crumb :mypage do
   link "マイページ", mypage_path
+  parent :root
+end
+
+# マイページ_子
+crumb :credit_cards do
+  link "支払い方法", credit_cards_path
+  parent :mypage
 end
 
 # 商品詳細 仮

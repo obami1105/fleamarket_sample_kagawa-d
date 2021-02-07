@@ -12,7 +12,7 @@
           .User__icon
             = image_tag('icon/member_photo_noimage_thumb.png', alt:'Name')
           %h2
-            = current_user&.nickname
+            = current_user.nickname
           %ul.User__rating
             %li
               評価

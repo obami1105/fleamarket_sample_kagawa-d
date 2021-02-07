@@ -1,5 +1,5 @@
 = render 'layouts/header' 
--# パンくずリスト：商品詳細ページ
+パンくずリスト：商品詳細ページ
 - breadcrumb :item
 = render "layouts/breadcrumb"
 
@@ -34,26 +34,23 @@
               %th カテゴリー
               %td 
             %tr
-              %th サイズ
-              %td
-            %tr
               %th ブランド
               %td
             %tr
               %th 商品の状態
-              %td
+              %td 新品、未使用
             %tr
               %th 配送料の負担
-              %td
+              %td 送料込み（出品者負担）
             %tr
               %th 配送の方法
-              %td
+              %td ゆうパック
             %tr
               %th 発送元の地域
-              %td
+              %td 香川県
             %tr
               %th 発送日の目安
-              %td
+              %td 4〜7日で発送
       .OptionArea
         %ul.FavUl
           =link_to "#",class: "FavTag" do
