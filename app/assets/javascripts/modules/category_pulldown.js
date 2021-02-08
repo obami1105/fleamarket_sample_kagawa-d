@@ -19,12 +19,10 @@ $(function(){
   }
 
 
-//changeイベント設定箇所
   $('.category__box').on('change','.item__category',function(){
-    $(this).nextAll().remove()  //選択された要素より下のformを一度リセット
-    const category_id=$(this).val() //選択されたidを取得
+    $(this).nextAll().remove()
+    const category_id=$(this).val()
 
-  //Ajaxのリクエストを記述
     $.ajax({
       type: "GET",
       url: "/api/items/category",
@@ -34,12 +32,12 @@ $(function(){
     .done(function(categories) {
 
   
-      if(categories.length==0){ //レスポンスでカテゴリーがない場合は処理を行わない
+      if(categories.length==0){
         return false
       }
       
-      const select_form=buildForm(categories) //挿入するフィームを作成
-      const target=$('.category__box') //append先である既存の要素を定義
+      const select_form=buildForm(categories)
+      const target=$('.category__box')
       target.append(select_form)
     
     })
