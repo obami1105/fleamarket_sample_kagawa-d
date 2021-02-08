@@ -1,0 +1,36 @@
+.user__all
+  .user__all__user_sign_up
+    = render 'layouts/header_user'
+
+    .contents
+      %h2 支払い方法
+      .contents__main
+        = form_with id: 'new_credit_cards', class: 'new_credit_cards', local: true do |f|
+          .contents__main__block
+            .field
+              = f.label :カード番号
+              %span.caution 必須
+              = f.text_field :customer_id, placeholder: '1234 5678 1234 5678'
+              = image_tag 'icon/visa.svg', class: 'CardLogo'
+              = image_tag 'icon/master.svg', class: 'CardLogo'
+              = image_tag 'icon/saison.svg', class: 'CardLogo'
+              = image_tag 'icon/jcb.svg', class: 'CardLogo'
+              = image_tag 'icon/american_express.svg', class: 'CardLogo'
+              = image_tag 'icon/dinersclub.svg', class: 'CardLogo'
+              = image_tag 'icon/discover.svg', class: 'CardLogo'
+            .field
+              = f.label :有効期限
+              %span.caution 必須
+              .Exp__field
+                != sprintf(f.date_select(:expiration_date, with_css_classes:'Exp__field--select', prompt:'---', order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
+            .field
+              = f.label :セキュリティーコード
+              %span.caution 必須
+              = f.text_field :card_id, placeholder: 'カード背面４桁もしくは３桁の番号', autocomplete: 'off'
+              .Text__link--right
+                =link_to '#' do
+                  = icon('fas', 'question-circle')
+                  カード裏面の番号とは？
+            = f.submit '登録する', class: 'sign_up_btn'
+            =link_to 'もどる', credit_cards_path, class: 'Text__link'
+    = render 'layouts/footer_user'
