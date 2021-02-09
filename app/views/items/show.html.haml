@@ -6,7 +6,8 @@
 .Contents
   .Contents__Inner
     .Item
-      %p.Item__Name ご飯
+      %p.Item__Name
+        =@item.name
       .Item__Images
         .Item__Images__Inner
           .Item__Image
@@ -15,42 +16,54 @@
         .Item__Subimage
           = image_tag 'pict2/梅干し.jpeg', alt:'Item', class:"ItemSubIMG"
       .Item__Price
-        %span.Item__Price__Price ¥5,000
+        %span.Item__Price__Price
+          ="¥#{@item.price.to_s(:delimited)}"
         .Item__PriceTax
           %span (税込)
-          %span 送料込み
+          %span
+            - if @item.shipping_fee_payer == 1
+              送料込
+            - else
+              送料別
       .Item__Status
         .Item__Status__Status
           売り切れました！
       .Item__Title
-        ごはん
+        =@item.introduction
       .Item__Tables
         %table.Item__Table
           %tbody.Item__TableBody
             %tr
               %th 出品者
-              %td saba
+              %td
+                = @item.user.nickname
             %tr
               %th カテゴリー
               %td 
-            %tr
-              %th ブランド
-              %td
+                =link_to "#" do
+                  = @item.category.root.name
+                %br 
+                =link_to "#" do
+                  =">#{@item.category.parent.name}"
+                %br
+                =link_to "#" do
+                  =">#{@item.category.name}"
             %tr
               %th 商品の状態
-              %td 新品、未使用
+              %td
+                =@item.condition.name
             %tr
               %th 配送料の負担
-              %td 送料込み（出品者負担）
-            %tr
-              %th 配送の方法
-              %td ゆうパック
+              %td
+                =@item.shipping_fee_payer.name
             %tr
               %th 発送元の地域
-              %td 香川県
+              %td
+                =@item.prefecture.name
             %tr
               %th 発送日の目安
-              %td 4〜7日で発送
+              %td
+                =@item.preparation_day.name
       .OptionArea
         %ul.FavUl
           =link_to "#",class: "FavTag" do
