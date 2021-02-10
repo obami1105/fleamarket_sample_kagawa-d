@@ -36,12 +36,12 @@
             %tr
               %th 出品者
               %td
-                = @item.user.nickname
+                =@item.user.nickname
             %tr
               %th カテゴリー
               %td 
                 =link_to "#" do
-                  = @item.category.root.name
+                  =@item.category.root.name
                 %br 
                 =link_to "#" do
                   =">#{@item.category.parent.name}"
