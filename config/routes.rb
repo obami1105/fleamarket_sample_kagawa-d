@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'signout', to: 'users#signout'
   end
 
-  resources :items, only: [:new, :show, :index]
+  resources :items, only: [:new, :show]
   get 'purchase', to: 'items#purchase'
   get 'mypage', to: 'users#show'
   resources :credit_cards, only: [:index, :new]
