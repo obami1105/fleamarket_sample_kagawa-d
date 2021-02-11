@@ -1,7 +1,5 @@
 class Item < ApplicationRecord
   belongs_to :user
-  # belongs_to :seller, foreign_key: "seller_id", class_name: "User"
-  # belongs_to :buyer, foreign_key: "buyer_id", class_name: "User"
   has_one :item_image, dependent: :destroy
   accepts_nested_attributes_for :item_image
   belongs_to :category
@@ -12,14 +10,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparation_day
 
   with_options presence: true do
-    # validates :user
-    # sellerとbuyerを作った際に上記を下記に変更
-    # validates :seller
     validates :item_image
     validates :trading_status
     validates :name
     validates :introduction
-    # validates :category_id
     validates :condition_id
     validates :shipping_fee_payer_id
     validates :prefecture_id

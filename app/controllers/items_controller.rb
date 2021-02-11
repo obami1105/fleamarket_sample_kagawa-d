@@ -29,9 +29,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:trading_status, :name, :category_id, :introduction, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price, item_image_attributes: [:id, :image_url]).merge(user_id: 1)
-    # ユーザー登録と連結した際に、上記を下記に変更する
-    # params.require(:item).permit(:trading_status, :name, :category_id, :introduction, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price, item_image_attributes: [:id, :image_url]).merge(user_id: current_user.id)
+    params.require(:item).permit(:trading_status, :name, :category_id, :introduction, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price, item_image_attributes: [:id, :image_url]).merge(user_id: current_user.id)
   end 
 
 end
