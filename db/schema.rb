@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_135715) do
+ActiveRecord::Schema.define(version: 2021_02_10_111441) do
 
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
@@ -25,15 +25,31 @@ ActiveRecord::Schema.define(version: 2021_01_26_135715) do
     t.index ["user_id"], name: "index_destinations_on_user_id"
   end
 
+  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.string "image_url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_item_images_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "trading_status", default: 0, null: false
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.integer "category_id", null: false
+    t.integer "condition_id", null: false
+    t.integer "shipping_fee_payer_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "preparation_day_id", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "nickname", null: false
-    t.string "first_name", null: false
-    t.string "family_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "family_name_kana", null: false
-    t.date "birth_date", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -44,4 +60,5 @@ ActiveRecord::Schema.define(version: 2021_01_26_135715) do
   end
 
   add_foreign_key "destinations", "users"
+  add_foreign_key "item_images", "items"
 end

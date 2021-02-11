@@ -88,20 +88,26 @@
         %h3.Pickup__title
           = link_to '新規投稿商品', '#'
         .PickupLists
-          .Pickup__item
-            = link_to '#' do
-              .Item__img
-                -# = image_tag('')
-                .SoldMark
-                  %span SOLD
-              .Item__text
-                %h3.Item__text--name 商品名
-                .Item__text--detail
-                  %ul
-                    %li 5,000円
-                    %li
-                      = icon('fas', 'star', '1')
-                  %p (税込)
+          - @items.first(10).each do |item|
+            .Pickup__item
+              = link_to '#' do
+                .Item__img
+                  = image_tag item.item_image.image_url ,width: "200px", height: "200px"
+                  - if item.trading_status == 1
+                    .SoldMark
+                      %span SOLD
+                .Item__text
+                  %h3.Item__text--name
+                    =item.name
+                  .Item__text--detail
+                    %ul
+                      %li
+                        - price = item.price
+                        = price.to_s(:delimited, delimiter: ',')
+                        円
+                      %li
+                        = icon('fas', 'star', '1')
+                    %p (税込)
 
   %section.Pickup.Pickup__bland
     .container
