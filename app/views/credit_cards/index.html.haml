@@ -1,0 +1,24 @@
+= render 'layouts/header'
+-# パンくずリスト:フリマ>マイページ>支払い方法
+- breadcrumb :credit_cards
+= render "layouts/breadcrumb"
+
+%main.Mypage
+  .Mypage__inner
+    = render 'users/mypage_side'
+    .Mypage__contents
+      .Main__contents
+        .Contents__header
+          %h2 支払い方法
+        .Contents__body
+          .Contents--card
+            %section
+              = link_to new_credit_card_path, class: 'Btn' do
+                = icon('far', 'credit-card')
+                クレジットカードを追加する
+            %section
+              %p
+                =link_to '#' do
+                  支払い方法について
+                  = icon('fas', 'chevron-right', class: "Nav__icon")
+= render 'layouts/footer'

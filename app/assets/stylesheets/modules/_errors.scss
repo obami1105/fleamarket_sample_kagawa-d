@@ -1,0 +1,44 @@
+#error_explanation {
+  margin: 0 auto;
+  max-width: 500px;
+  border: 2px solid #ffecb5;
+  border-radius: 10px;
+  background-color: #fff3cd;
+  color: #f08080;
+  h2 {
+    padding: 20px;
+    font-size: 18px;
+  }
+  ul {
+    display: block;
+    margin: 0 20px 20px;
+    text-align: center;
+    li {
+      font-size: 14px;
+    }
+  }
+}
+
+.field_with_errors {
+  display: block;
+  input,
+  select {
+    border: 1px solid red !important;
+  }
+  .input__half__left,
+  .input__half__right {
+    width: calc(100% - 6px) !important;
+  }
+}
+
+.birthday {
+  align-items: center;
+  .field_with_errors {
+    width: calc(100% - 10px) !important;
+    .year,
+    .month,
+    .day {
+      width: calc((100% - 40px) / 3) !important;
+    }
+  }
+}

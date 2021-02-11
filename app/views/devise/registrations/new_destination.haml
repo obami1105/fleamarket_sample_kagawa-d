@@ -1,0 +1,38 @@
+.user__all
+  .user__all__user_sign_up
+    = render 'layouts/header_user'
+
+    .contents
+      %h2 会員情報入力
+      .contents__main
+        = form_with model: @destination, local: true do |f|
+          = render "devise/shared/error_messages", resource: @destination
+          .contents__main__block
+            .field
+              %h3 配送先住所
+            .field
+              = f.label :郵便番号
+              %span.caution 必須
+              = f.text_field :post_code, placeholder: "例）760-0023"
+            .field
+              = f.label :都道府県
+              %span.caution 必須
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "select"}
+            .field
+              = f.label :市区町村
+              %span.caution 必須
+              = f.text_field :city, placeholder: "例）高松市"
+            .field
+              = f.label :番地
+              %span.caution 必須
+              = f.text_field :house_number, placeholder: "例）寿町１−１−１１"
+            .field
+              = f.label :建物名
+              %span.normal 任意
+              = f.text_field :building_name, placeholder: "例）高松駅前ビル５階"
+            .field
+              = f.label :電話番号
+              %span.normal 任意
+              = f.phone_field :phone_number, placeholder: "例）08712345678"
+              = f.submit "登録する", class: 'sign_up_btn'
+    = render 'layouts/footer_user'

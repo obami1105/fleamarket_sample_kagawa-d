@@ -5,14 +5,16 @@
   padding: 0;
   background: whitesmoke;
   font-size: 14px;
-  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, Arial, '游ゴシック体', 'YuGothic',
+    'メイリオ', 'Meiryo', sans-serif;
 
   h1 {
     margin: 40px 0 0;
-    display:inline-block;
+    display: inline-block;
   }
 
-  .user__header__img,.footer__user__img {
+  .user__header__img,
+  .footer__user__img {
     width: 185px;
     height: 49px;
   }
@@ -46,7 +48,8 @@
     margin: 0 8px;
   }
 
-  input {
+  input,
+  select {
     height: 48px;
     padding: 10px 16px 8px;
     border-radius: 4px;
@@ -69,5 +72,4 @@
   label {
     font-weight: 600;
   }
-
 }

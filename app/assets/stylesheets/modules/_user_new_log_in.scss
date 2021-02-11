@@ -20,43 +20,43 @@
       }
     }
     &__midle {
-        border-top: 1px solid #eee;
-        padding: 32px 64px;
-        &__block {
-          margin: 0 auto;
-          max-width: 343px;
+      border-top: 1px solid #eee;
+      padding: 32px 64px;
+      &__block {
+        margin: 0 auto;
+        max-width: 343px;
+      }
+      &__btn {
+        position: relative;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        margin: 16px 0 0;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 4px;
+        &--google {
+          background-color: #fff;
+          border: #979797 solid 1px;
+          color: #333;
         }
-        &__btn {
-          position: relative;
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          margin: 16px 0 0;
-          text-align: center;
-          border: 1px solid;
-          border-radius: 4px;
-          &--google {
-            background-color: #fff;
-            border: #979797 solid 1px;
-            color: #333;
-          }
-          &--facebook {
-            background: #385185;
-            color: #fff;
-          }
-          &--apple {
-            background: #000;
-            color: #fff;
-          }
-          &--icon {
-            position: absolute;
-            top: 50%;
-            left: 16px;
-            transform: translate(0, -50%);
-            font-size: 20px;
-          }
+        &--facebook {
+          background: #385185;
+          color: #fff;
         }
+        &--apple {
+          background: #000;
+          color: #fff;
+        }
+        &--icon {
+          position: absolute;
+          top: 50%;
+          left: 16px;
+          transform: translate(0, -50%);
+          font-size: 20px;
+        }
+      }
     }
     &__under {
       padding: 32px 64px;
@@ -72,5 +72,13 @@
         margin: 40px 0 0;
       }
     }
+  }
+  .alert {
+    padding: 20px 10px;
+    text-align: center;
+    border: 2px solid #ffecb5;
+    border-radius: 10px;
+    background-color: #fff3cd;
+    color: #f08080;
   }
 }

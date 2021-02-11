@@ -18,8 +18,45 @@
           =link_to '#' do
             = image_tag('icon/icon_brand.png', class:'NavIcon')
             = 'ブランドから探す'
-      %ul.RightNavLists
-        %li.NavLists__Item
-          =link_to 'ログイン', '/users/sign_in', class: 'Btn--line'
-        %li.NavLists__Item
-          =link_to '新規会員登録', '/users/sign_up', class: 'Btn'
+      - if user_signed_in?
+        %ul.RightNavLists.UserNav
+          %li.NavLists__Item
+            = link_to '#' do
+              = icon('fas', 'question-circle', class: 'NavIcon')
+              = 'お気に入り一覧'
+          %li.NavLists__Item
+            = link_to '#' do
+              = icon('fas', 'question-circle', class: 'NavIcon')
+              = 'お知らせ'
+            .NavContents
+              = render 'users/info'
+          %li.NavLists__Item
+            = link_to '#' do
+              = icon('fas', 'question-circle', class: 'NavIcon')
+              = 'やること一覧'
+            .NavContents
+              %ul.InfoLists
+                %li.InfoLists__item.NotFound
+                  現在、やることリストはありません
+          %li.NavLists__Item
+            =link_to mypage_path do
+              = image_tag('icon/member_photo_noimage_thumb.png', class: 'NavIcon')
+              = 'マイページ'
+            .NavContents.User
+              .User__icon
+                = image_tag('icon/member_photo_noimage_thumb.png', alt:'Name')
+              %h2
+                = current_user.nickname
+              %ul.User__rating
+                %li
+                  評価
+                  %span 20
+                %li
+                  出品数
+                  %span 30
+      - else
+        %ul.RightNavLists
+          %li.NavLists__Item
+            =link_to 'ログイン', new_user_session_path, class: 'Btn--line'
+          %li.NavLists__Item
+            =link_to '新規会員登録', new_user_registration_path, class: 'Btn'
