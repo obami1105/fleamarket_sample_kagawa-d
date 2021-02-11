@@ -9,14 +9,14 @@ describe ItemImage do
     it "itemが存在しないと登録できないこと" do
       @item_image.item = nil
       @item_image.valid?
-      expect(@item_image.errors[:item]).to include("must exist")
+      expect(@item_image.errors[:item]).to include("を入力してください")
     end
 
     # image_url
     it "image_urlが空では登録できないこと" do
       @item_image.image_url = nil
       @item_image.valid?
-      expect(@item_image.errors[:image_url]).to include("can't be blank")
+      expect(@item_image.errors[:image_url]).to include("を入力してください")
     end
 
   end
