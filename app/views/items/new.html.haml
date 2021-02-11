@@ -3,6 +3,7 @@
 
   .MainItem
     = form_with model:@item, id: 'new_item', class: 'new_item', local: true do |f|
+      = render 'layouts/error_messages', model: f.object
       .Item__contents
         %label.image 出品画像
         %span.required 必須
@@ -34,7 +35,7 @@
           %label.section カテゴリー
           %span.required 必須
           .category__box
-            = f.collection_select :category_id, @categories, :id, :name,{include_blank: "選択してください"},{class: "section__second item__category"}
+            = f.collection_select :category_id, @categories, :id, :name, {include_blank: "選択してください"}, {class: "section__second item__category"}
         .Item__box
           %label.section 商品の状態
           %span.required 必須
@@ -73,12 +74,12 @@
         .Price__second
           .Price__box
             販売手数料（10%）
-          %span.Value ー
+          %span.Value1 ー
         %hr.Line
         .Price__third
           .Profit
             販売利益
-          %span.Value ー
+          %span.Value2 ー
       .Contents__first
         .Contents__second
           = f.submit "出品する", class: "form__submit"

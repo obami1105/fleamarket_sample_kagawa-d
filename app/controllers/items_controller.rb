@@ -15,14 +15,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # respond_to do |format|
-    #   format.html { redirect_to :root }
-    #   format.json { render json: @todo}
-    # end
     if @item.save
-      redirect_to root_path, notice: '商品が出品されました'
+      redirect_to root_path
     else
-      flash.now[:alert] = 'メッセージを入力してください。'
+      @categories = Category.roots
       render :new
     end
   end
@@ -33,7 +29,9 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:trading_status, :name, :category_id, :introduction, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price, item_image_attributes: [:id, :image_url])
+    params.require(:item).permit(:trading_status, :name, :category_id, :introduction, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price, item_image_attributes: [:id, :image_url]).merge(user_id: 1)
+    # ユーザー登録と連結した際に、上記を下記に変更する
+    # params.require(:item).permit(:trading_status, :name, :category_id, :introduction, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price, item_image_attributes: [:id, :image_url]).merge(user_id: current_user.id)
   end 
 
 end
