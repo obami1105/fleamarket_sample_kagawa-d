@@ -9,9 +9,9 @@
         %span.required 必須
         %p.photo １枚のみアップロードできます
         .ImageBox__field
-          %label{ class: 'ImageBox__group__input__image__hidden',for:"aa"}
+          %label{ class: 'ImageBox__group__input__image__hidden',for:"image_1"}
             = f.fields_for :item_image, @item.build_item_image do |item_image| 
-              = item_image.file_field :image_url, class: 'ImageBox__group__form',id:'aa'
+              = item_image.file_field :image_url, class: 'ImageBox__group__form',id:'image_1'
               .Image__box__second
                 =icon('fa', 'camera', class: 'Image__icon') 
                 %p.pic クリックしてファイルをアップロード

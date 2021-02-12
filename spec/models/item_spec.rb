@@ -37,11 +37,6 @@ describe Item do
       @item.valid?
       expect(@item.errors[:name]).to include("は40文字以内で入力してください")
     end
-    
-    it "nameが40文字以下なら登録できる" do
-      @item.name = "a" * 40
-      expect(@item).to be_valid
-    end
 
     # introduction
     it "introductionが空では登録できないこと" do
@@ -55,11 +50,6 @@ describe Item do
       @item.introduction = "a" * 1001
       @item.valid?
       expect(@item.errors[:introduction]).to include("は1000文字以内で入力してください")
-    end
-
-    it "introductionが1000文字以下なら登録できる" do
-      @item.introduction = "a" * 1000
-      expect(@item).to be_valid
     end
 
     # condition_id
@@ -80,11 +70,6 @@ describe Item do
       @item.condition_id = 7
       @item.valid?
       expect(@item.errors[:condition_id]).to include("は一覧にありません")
-    end
-
-    it "condition_idが6は登録できること" do
-      @item.condition_id = 6
-      expect(@item).to be_valid
     end
 
     # condition_idは数字
@@ -121,11 +106,6 @@ describe Item do
       expect(@item.errors[:shipping_fee_payer_id]).to include("は一覧にありません")
     end
 
-    it "shipping_fee_payer_idが2は登録できること" do
-      @item.shipping_fee_payer_id = 2
-      expect(@item).to be_valid
-    end
-
     # shipping_fee_payer_idは数字
     it "shipping_fee_payer_idが文字列では登録できないこと" do
       @item.shipping_fee_payer_id = "２"
@@ -151,11 +131,6 @@ describe Item do
       @item.prefecture_id = 48
       @item.valid?
       expect(@item.errors[:prefecture_id]).to include("は一覧にありません")
-    end
-
-    it "prefecture_idが47は登録できること" do
-      @item.prefecture_id = 47
-      expect(@item).to be_valid
     end
 
     # prefecture_idは数字
@@ -185,11 +160,6 @@ describe Item do
       expect(@item.errors[:preparation_day_id]).to include("は一覧にありません")
     end
 
-    it "preparation_day_idが3は登録できること" do
-      @item.preparation_day_id = 3
-      expect(@item).to be_valid
-    end
-
     # preparation_day_idは数字
     it "preparation_day_idが文字列では登録できないこと" do
       @item.preparation_day_id = "３"
@@ -215,11 +185,6 @@ describe Item do
       @item.price = 10000000
       @item.valid?
       expect(@item.errors[:price]).to include("は一覧にありません")
-    end
-
-    it "priceが9999999は登録できること" do
-      @item.price = 9999999
-      expect(@item).to be_valid
     end
 
     # priceは数字
