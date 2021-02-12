@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items, only: [:new, :create, :show]
+  resources :items, only: [:new, :create, :show] do
+    collection do
+      get 'search'
+    end
+  end
   get 'api/items/category',to: 'items#get_category'
 
   devise_scope :user do
