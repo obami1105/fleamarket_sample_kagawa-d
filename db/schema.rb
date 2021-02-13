@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2021_02_09_121134) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
     t.integer "prefecture_id", null: false
@@ -57,9 +64,9 @@ ActiveRecord::Schema.define(version: 2021_02_09_121134) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "nickname", null: false
     t.string "first_name", null: false
     t.string "family_name", null: false
     t.string "first_name_kana", null: false

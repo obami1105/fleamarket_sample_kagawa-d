@@ -2,19 +2,20 @@
   = render 'layouts/header_user'
 
   .MainItem
-    = form_with id: 'new_item', class: 'new_item', local: true do |f|
+    = form_with model:@item, id: 'new_item', class: 'new_item', local: true do |f|
+      = render 'layouts/error_messages', model: f.object
       .Item__contents
         %label.image 出品画像
         %span.required 必須
         %p.photo １枚のみアップロードできます
-        .ImageBox
-          .ImageBox__file
-          .ImageBox__field
-            = f.label :image, class: 'ImageBox__group__input__image__hidden' do
-              = f.file_field :image,class: 'ImageBox__group__form'
+        .ImageBox__field
+          %label{ class: 'ImageBox__group__input__image__hidden',for:"image_1"}
+            = f.fields_for :item_image, @item.build_item_image do |item_image| 
+              = item_image.file_field :image_url, class: 'ImageBox__group__form',id:'image_1'
               .Image__box__second
-                =icon('fa', 'camera', class: 'Image__icon')
+                =icon('fa', 'camera', class: 'Image__icon') 
                 %p.pic クリックしてファイルをアップロード
+
       %hr.Line
       .Item__contents
         .Form__group
@@ -33,33 +34,31 @@
         .Item__box
           %label.section カテゴリー
           %span.required 必須
-          %select.section__second
+          .category__box
+            = f.collection_select :category_id, @categories, :id, :name, {include_blank: "選択してください"}, {class: "section__second item__category"}
         .Item__box
           %label.section 商品の状態
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
       %hr.Line
       .Item__contents
         %p.box 
           配送について
+
           = link_to "#" do
             =icon('fa', 'question-circle', class: 'Image__Qicon')
         .Item__box
           %label.section 配送料の負担
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :shipping_fee_payer_id, ShippingFeePayer.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
         .Item__box
           %label.section 発送元の地域
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
         .Item__box
           %label.section 発送までの日数
           %span.required 必須
-          -# 下記コード差替（Activehash実装後）
-          %select.section__second
+          = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
       %hr.Line
       .Item__contents
         %p.box 
@@ -75,12 +74,12 @@
         .Price__second
           .Price__box
             販売手数料（10%）
-          %span.Value ー
+          %span.Value1 ー
         %hr.Line
         .Price__third
           .Profit
             販売利益
-          %span.Value ー
+          %span.Value2 ー
       .Contents__first
         .Contents__second
           = f.submit "出品する", class: "form__submit"
