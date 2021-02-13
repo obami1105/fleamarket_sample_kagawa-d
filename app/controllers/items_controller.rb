@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
+    @items=Item.includes(:item_image).order("created_at DESC").limit(10)
   end
 
   def new
