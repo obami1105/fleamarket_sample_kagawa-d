@@ -1,0 +1,31 @@
+= render 'layouts/header' 
+- breadcrumb :search
+= render "layouts/breadcrumb"
+
+%section.Pickup.Pickup__category
+  .container
+    %h2 検索結果
+    .PickupLists
+      - @items.each do |item| 
+        .Pickup__item
+          = link_to item_path(item.id), method: :get do
+            .Item__img
+              = image_tag item.item_image.image_url.url ,width: "200px", height: "200px"
+              - if item.trading_status == 1
+                .SoldMark
+                  %span SOLD
+            .Item__text
+              %h3.Item__text--name
+                = item.name
+              .Item__text--detail
+                %ul
+                  %li
+                    - price = item.price
+                    = price.to_s(:delimited, delimiter: ',')
+                    円
+                  %li
+                    = icon('fas', 'star', '1')
+                %p (税込)
+
+
+= render 'layouts/footer'

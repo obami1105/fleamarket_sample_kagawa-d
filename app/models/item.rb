@@ -28,5 +28,13 @@ class Item < ApplicationRecord
   validates :prefecture_id, numericality:{ only_integer: true }, inclusion: { in: 1..47 }, allow_blank: true
   validates :preparation_day_id, numericality:{ only_integer: true }, inclusion: { in: 1..3 }, allow_blank: true
   validates :price, numericality:{ only_integer: true }, inclusion: { in: 300..9999999 }, allow_blank: true
+
+  def self.search(search)
+    if search != ""
+      Item.includes(:item_image).where('name Like(?)', "%#{search}%").references(:item_image)
+    else
+      Item.includes(:item_image).references(:item_image)
+    end
+  end
   
 end
