@@ -90,7 +90,7 @@
         .PickupLists
           - @items.each do |item|
             .Pickup__item
-              = link_to '#' do
+              = link_to item_path(item.id), method: :get do
                 .Item__img
                   = image_tag item.item_image.image_url.url ,width: "200px", height: "200px"
                   - if item.trading_status == 1
