@@ -92,7 +92,7 @@
             .Pickup__item
               = link_to '#' do
                 .Item__img
-                  = image_tag item.item_image.image_url ,width: "200px", height: "200px"
+                  = image_tag item.item_image.image_url.url ,width: "200px", height: "200px"
                   - if item.trading_status == 1
                     .SoldMark
                       %span SOLD
