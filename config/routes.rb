@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   get 'purchase', to: 'items#purchase'
   get 'mypage', to: 'users#show'
-  resources :credit_cards, only: [:index, :new]
+  get 'item', to: 'items#show'
+  resources :credit_cards, only: [:index, :new, :show]
 end

@@ -11,10 +11,10 @@
       .Item__Images
         .Item__Images__Inner
           .Item__Image
-            = image_tag 'pict2/ご飯.png', alt:'Item', class:"ItemIMG"
+            = image_tag @item.item_image.image_url_url, alt:'Item', class:"ItemIMG"
       .Item__Subimages
         .Item__Subimage
-          = image_tag 'pict2/梅干し.jpeg', alt:'Item', class:"ItemSubIMG"
+          = image_tag @item.item_image.image_url_url, alt:'Item', class:"ItemSubIMG"
       .Item__Price
         %span.Item__Price__Price
           ="¥#{@item.price.to_s(:delimited)}"
@@ -41,10 +41,10 @@
               %th カテゴリー
               %td 
                 =link_to "#" do
-                  =@item.category.root.name
-                %br 
-                =link_to "#" do
-                  =">#{@item.category.parent.name}"
+                  = @item.category.root.name
+                -# %br
+                -# =link_to "#" do
+                -#   =">#{@item.category.parent.name}"
                 %br
                 =link_to "#" do
                   =">#{@item.category.name}"
@@ -91,7 +91,8 @@
           コメントする
     .RelatedItemsUserSection
       =link_to "#", class: "SectionTitle" do
-        さばさんのその他の出品
+        =@item.user.nickname
+        のその他の出品
       .RelatedItemsUser
         .RelatedItemUser
           =link_to "#", class: "Item__Wrapper" do
