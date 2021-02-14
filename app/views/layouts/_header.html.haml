@@ -4,7 +4,7 @@
       .Logo
         = link_to image_tag('logo/logo.png', alt:'FURIMA'), root_path
       .SearchBox
-        = form_with(url: '#', local: true, method: :get, class: 'Form') do |f|
+        = form_with(url: search_items_path, local: true, method: :get, class: 'Form') do |f|
           =f.text_field :keyword, placeholder: 'キーワードから探す', class: 'Form__inputText'
           %button{type: 'submit', class: 'Form__searchBtn'}
             = image_tag('icon/icon-search 1.png')

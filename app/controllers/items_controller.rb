@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @items=Item.includes(:item_image).order("created_at DESC").limit(10)
@@ -30,6 +30,11 @@ class ItemsController < ApplicationController
   
   def show
   end 
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   def purchase
   end
 
