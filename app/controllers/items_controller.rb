@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
   end 
 
   def search
-    @items = Item.search(params[:keyword]).limit(100)
+    @items = Item.search(params[:keyword])
   end
 
   def purchase
