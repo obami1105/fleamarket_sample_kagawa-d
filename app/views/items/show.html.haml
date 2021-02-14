@@ -42,9 +42,9 @@
               %td 
                 =link_to "#" do
                   = @item.category.root.name
-                -# %br
-                -# =link_to "#" do
-                -#   =">#{@item.category.parent.name}"
+                %br
+                =link_to "#" do
+                  =">#{@item.category.parent.name}"
                 %br
                 =link_to "#" do
                   =">#{@item.category.name}"
@@ -79,7 +79,7 @@
           
     .Comment
       %ul.CommentForm
-      = form_with(url: "#", local: true, method: :post, class: "Form") do |f|
+      = form_with(url: "#", class: "Form") do |f|
         =f.text_area :hoge ,class: "CommentText"
         %p.NoticeMsg 
           相手のことを考え丁寧なコメントを心がけましょう。
