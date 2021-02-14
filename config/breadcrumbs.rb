@@ -21,6 +21,7 @@ crumb :item do
   parent :root
 end
 
+
 # # #商品詳細 差替_リンク名連動
 # crumb :item do
 #   link Item.find(params[:id]).name, item_path
@@ -31,3 +32,8 @@ end
 #   link @item.name, item_path
 #   parent :root
 # end
+
+crumb :search do
+  link "検索結果", search_items_path
+  parent :root
+end

@@ -3,14 +3,19 @@ $(function(){
     var data = $('.Form__input__price').val();
       // "販売価格"をdata変数に代入
     var fee = Math.round(data * 0.1)
-    var profit = (data - fee)
-    var formatter = new Intl.NumberFormat();
-      // ３桁ごとにカンマ区切りをする。
-    $('.Value1').html(formatter.format(fee))
-    $('.Value1').prepend('¥')
-    $('.Value2').html(formatter.format(profit))
-    $('.Value2').prepend('¥')
-    if(fee == '') {
+    if(Number.isInteger(fee)){
+      var profit = (data - fee)
+      var formatter = new Intl.NumberFormat();
+        // ３桁ごとにカンマ区切りをする。
+      $('.Value1').html(formatter.format(fee))
+      $('.Value1').prepend('¥')
+      $('.Value2').html(formatter.format(profit))
+      $('.Value2').prepend('¥')
+      if(fee == '') {
+        $('.Value1').html('ー');
+        $('.Value2').html('ー');
+      }
+    } else{
       $('.Value1').html('ー');
       $('.Value2').html('ー');
     }
