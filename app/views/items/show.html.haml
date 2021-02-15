@@ -26,8 +26,10 @@
             - else
               送料別
       .Item__Status
-        .Item__Status__Status
-          売り切れました！
+        -# - if user_signed_in?
+        = link_to '商品を編集する', "#", method: :get, class:"ItemEdit"
+        %tr 
+          = link_to '商品を削除する', "#", method: :delete, class:"ItemDelete"
       .Item__Title
         =@item.introduction
       .Item__Tables
