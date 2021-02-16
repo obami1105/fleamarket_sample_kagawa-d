@@ -15,11 +15,9 @@ Rails.application.routes.draw do
     get 'destinations', to: 'users/registrations#new_destination'
     post 'destinations', to: 'users/registrations#create_destination'
     get 'signout', to: 'users#signout'
-    get 'item', to: 'items#show'
   end
 
   get 'purchase', to: 'items#purchase'
   get 'mypage', to: 'users#show'
-  get 'item', to: 'items#show'
   resources :credit_cards, only: [:index, :new, :show]
 end
