@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   }
   root 'items#index'
   resources :items, only: [:new, :create, :show] do
-  # resources :items, only: [:new, :create, :show, :destroy, :edit] do 
     collection do
       get 'search'
     end
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
     get 'destinations', to: 'users/registrations#new_destination'
     post 'destinations', to: 'users/registrations#create_destination'
     get 'signout', to: 'users#signout'
+    get 'item', to: 'items#show'
   end
 
   get 'purchase', to: 'items#purchase'
