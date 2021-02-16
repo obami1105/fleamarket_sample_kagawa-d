@@ -1,4 +1,8 @@
-= render 'layouts/header' 
+-# ・- if user_signed_in?
+  = render 'layouts/login_user_header' 
+-# - else
+-#   = render 'layouts/no_login_user_header'
+  
 -# パンくずリスト：商品詳細ページ
 - breadcrumb :item
 = render "layouts/breadcrumb"
@@ -25,11 +29,11 @@
               送料込
             - else
               送料別
-      .Item__Status
-        -# - if user_signed_in?
-        = link_to '商品を編集する', "#", method: :get, class:"ItemEdit"
-        %tr 
-          = link_to '商品を削除する', "#", method: :delete, class:"ItemDelete"
+      - if user_signed_in? && current_user.id == @item.user_id
+        .Item__Status
+          = link_to '商品を編集する', "#", method: :get, class:"ItemEdit"
+          %tr 
+            = link_to '商品を削除する', "#", method: :delete, class:"ItemDelete"
       .Item__Title
         =@item.introduction
       .Item__Tables
@@ -204,4 +208,4 @@
                     4
                 %p.Tax (税込)
 
-= render 'layouts/footer'
+  = render 'layouts/footer'

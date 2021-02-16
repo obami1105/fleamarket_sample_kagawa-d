@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :show, :destroy, :edit]
 
   def index
     @items=Item.includes(:item_image).order("created_at DESC").limit(10)
@@ -26,10 +26,14 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-  
+
+  # def deleat
+  #   redirect_to action: :show unless user_signed_in?
+  # end
+
   def show
     @item = Item.find(params[:id])
-  end 
+  end
 
   def search
     @items = Item.search(params[:keyword])
