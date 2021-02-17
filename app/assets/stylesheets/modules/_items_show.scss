@@ -1,34 +1,34 @@
-.Contents{
+.Contents {
   padding: 40px;
   margin: 0 auto;
   box-sizing: border-box;
-  .Contents__Inner{
+  .Contents__Inner {
     width: 700px;
     margin: 0 auto;
   }
 }
 
-.Item{
+.Item {
   padding: 24px 40px 40px;
   background-color: $color-block;
 }
 
-.Item__Name{
+.Item__Name {
   text-align: center;
   font-weight: bold;
   font-size: 24px;
   display: block;
 }
 
-.Item__Images{
+.Item__Images {
   margin: 16px 0 0;
-  .Item__Images__Inner{
+  .Item__Images__Inner {
     width: 300px;
     height: 300px;
     margin: 0 auto;
     text-align: center;
     display: flex;
-    .Item__Image{
+    .Item__Image {
       width: 100%;
       height: 100%;
       display: flex;
@@ -37,47 +37,47 @@
   }
 }
 
-.ItemIMG{
+.ItemIMG {
   width: 100%;
   height: 100%;
 }
 
-.Item__Subimages{
+.Item__Subimages {
   height: 60px;
   width: 300px;
   margin: 0 auto;
   display: flex;
-  .Item__Subimage{
+  .Item__Subimage {
     width: 60px;
     height: 60px;
     position: relative;
     overflow: hidden;
-    .ItemSubIMG{
+    .ItemSubIMG {
       width: 100%;
       height: 100%;
     }
   }
 }
 
-.Item__Price{
+.Item__Price {
   margin: 24px 0 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  .Item__Price__Price{
+  .Item__Price__Price {
     font-size: 46px;
     font-weight: bold;
     margin: 0 10px 0 0;
   }
-  .Item__PriceTax{
+  .Item__PriceTax {
     font-size: 16px;
   }
 }
 
-.Item__Status{
+.Item__Status {
   margin: 0;
   padding: 0;
-  .ItemEdit{
+  .ItemEdit {
     margin: 10px 0;
     color: $color-block;
     font-weight: bold;
@@ -94,7 +94,7 @@
     box-sizing: border-box;
   }
 }
-.ItemDelete{
+.ItemDelete {
   margin-top: 15px;
   margin: 10px 0;
   background-color: red;
@@ -111,9 +111,9 @@
   text-decoration: none;
 }
 
-.ItemBuyer{
+.ItemBuyer {
   border: 1px solid $color-main;
-  @include btn(#3CCACE);
+  @include btn(#3ccace);
   margin: 10px 0;
   color: $color-block;
   display: block;
@@ -121,22 +121,38 @@
   line-height: 48px;
   font-size: 14px;
   border-radius: 4px;
-  transition: all ease-out .3s;
+  transition: all ease-out 0.3s;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   box-sizing: border-box;
 }
 
-.Item__Title{
+.ItemSoldout {
+  background-color: #ccc;
+  margin: 10px 0;
+  color: $color-text;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all ease-out 0.3s;
+  cursor: not-allowed;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.Item__Title {
   margin-top: 15px;
   font-size: 18px;
   margin-bottom: 30px;
 }
 
-.Item__Tables{
+.Item__Tables {
   margin-bottom: 20px;
-  .Item__Table{
+  .Item__Table {
     width: 100%;
     height: 375px;
     border-collapse: collapse;
@@ -144,12 +160,12 @@
   }
 }
 
-.Item__TableBody{
+.Item__TableBody {
   display: table-row-group;
   vertical-align: middle;
-  tr{
+  tr {
     display: table-row;
-    th{
+    th {
       width: 20%;
       background-color: #eee;
       font-weight: 400;
@@ -158,7 +174,7 @@
       font-size: 14px;
       text-align: center;
     }
-    td{
+    td {
       width: 61%;
       padding: 15px 15px;
       border: 1px solid $light-gray;
@@ -167,19 +183,19 @@
   }
 }
 
-.OptionArea{
+.OptionArea {
   display: flex;
   justify-content: space-between;
 }
 
-.FavUl{
+.FavUl {
   margin: 10px 0 0;
   display: flex;
   list-style: none;
-  .FavTag{
+  .FavTag {
     color: $color-user;
     text-decoration: none;
-    .Favolite{
+    .Favolite {
       margin-right: auto;
       padding: 6px 10px;
       border-radius: 40px;
@@ -187,7 +203,7 @@
       border: 1px solid #ffb340;
       cursor: pointer;
     }
-    .Report{
+    .Report {
       font-size: 14px;
       color: #000;
       box-sizing: border-box;
@@ -203,33 +219,33 @@
   }
 }
 
-.Comment{
+.Comment {
   padding: 24px;
   background-color: $color-block;
   margin: 10px 0;
   text-align: center;
-  .CommentForm{
+  .CommentForm {
     width: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
     display: block;
   }
-  .Form{
-    .CommentText{
+  .Form {
+    .CommentText {
       margin: 0 auto;
       width: 100%;
       min-height: 104px;
       padding: 10px;
     }
-    .NoticeMsg{
+    .NoticeMsg {
       padding: 8px;
       font-size: 14px;
       background-color: $white;
       margin: 10px 0;
       text-align: left;
     }
-    .FormSendBtn{
+    .FormSendBtn {
       line-height: 48px;
       background: $color-main;
       border: 1px solid $color-main;
@@ -241,7 +257,7 @@
   }
 }
 
-.SectionTitle{
+.SectionTitle {
   display: block;
   margin: 24px 0 8px;
   color: $color-main;
@@ -252,19 +268,19 @@
   position: relative;
 }
 
-.RelatedItemsUser{
+.RelatedItemsUser {
   margin: 26px auto;
   display: flex;
   flex-wrap: wrap;
   background: $white;
-.RelatedItemUser:nth-of-type(3n) {
-  margin-right: 0;
-}
-  .RelatedItemUser{
+  .RelatedItemUser:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  .RelatedItemUser {
     width: 220px;
     display: inline-block;
     margin-right: 20px;
-    .Item__Wrapper{
+    .Item__Wrapper {
       width: 100%;
       background-color: $color-block;
       display: inline-block;
@@ -275,46 +291,46 @@
   }
 }
 
-.ItemImage{
+.ItemImage {
   width: 220px;
   height: 150px;
   position: relative;
   overflow: hidden;
   margin: 0;
   display: block;
-  .RelatedItemIMG{
+  .RelatedItemIMG {
     width: 100%;
     height: 100%;
   }
 }
 
-.ItemText{
+.ItemText {
   background-color: white;
   color: $color-text;
   padding: 16px;
-  .ItemName{
+  .ItemName {
     line-height: 1.5;
     font-size: 16px;
     text-align: left;
     margin: 0;
     padding: 0;
   }
-  .ItemPrice{
+  .ItemPrice {
     font-size: 16px;
     text-decoration: none;
-    .PriceUl{
+    .PriceUl {
       display: flex;
       align-items: center;
       justify-content: space-between;
       list-style: none;
       margin: 0;
       padding: 0;
-      .Priceli{
+      .Priceli {
         display: list-item;
         text-align: -webkit-match-parent;
       }
     }
-    .Tax{
+    .Tax {
       font-size: 10px;
       text-align: left;
       margin: 0;
@@ -322,4 +338,3 @@
     }
   }
 }
-
