@@ -1,0 +1,20 @@
+= render 'layouts/header'
+- breadcrumb :credit_cards
+= render "layouts/breadcrumb"
+
+%main.Mypage
+  .Mypage__inner
+    = render 'users/mypage_side'
+    .Mypage__contents
+      .Main__contents
+        .Contents__header
+          %h2 支払い方法
+        .Contents__body
+          .Contents--card
+            %section.Card__info
+              .Card__info クレジットカードの登録を削除しました
+              = link_to "マイページに戻る", mypage_path, class: "Btn"
+              = link_to new_credit_card_path, class: 'Btn' do
+                = icon('far', 'credit-card')
+                クレジットカード新規登録
+= render 'layouts/footer'
