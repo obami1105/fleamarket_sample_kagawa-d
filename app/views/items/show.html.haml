@@ -1,56 +1,73 @@
 = render 'layouts/header' 
-パンくずリスト：商品詳細ページ
+-# パンくずリスト：商品詳細ページ
 - breadcrumb :item
 = render "layouts/breadcrumb"
 
 .Contents
   .Contents__Inner
     .Item
-      %p.Item__Name ご飯
+      %p.Item__Name
+        =@item.name
       .Item__Images
         .Item__Images__Inner
           .Item__Image
-            = image_tag 'pict2/ご飯.png', alt:'Item', class:"ItemIMG"
+            = image_tag @item.item_image.image_url_url, alt:'Item', class:"ItemIMG"
       .Item__Subimages
         .Item__Subimage
-          = image_tag 'pict2/梅干し.jpeg', alt:'Item', class:"ItemSubIMG"
+          = image_tag @item.item_image.image_url_url, alt:'Item', class:"ItemSubIMG"
       .Item__Price
-        %span.Item__Price__Price ¥5,000
+        %span.Item__Price__Price
+          ="¥#{@item.price.to_s(:delimited)}"
         .Item__PriceTax
           %span (税込)
-          %span 送料込み
-      .Item__Status
-        .Item__Status__Status
-          売り切れました！
+          %span
+            - if @item.shipping_fee_payer == 1
+              送料込
+            - else
+              送料別
+        .Item__Status
+          - if user_signed_in?
+            - if current_user.id == @item.user_id
+              = link_to '商品を編集する', "#", class:"ItemEdit"
+              = link_to '商品を削除する', "#", class:"ItemDelete"
+            - else user_signed_in? && current_user.id
+              = link_to '購入画面へ進む', "#", class:"ItemBuyer"
       .Item__Title
-        ごはん
+        =@item.introduction
       .Item__Tables
         %table.Item__Table
           %tbody.Item__TableBody
             %tr
               %th 出品者
-              %td saba
+              %td
+                =@item.user.nickname
             %tr
               %th カテゴリー
               %td 
-            %tr
-              %th ブランド
-              %td
+                =link_to "#" do
+                  = @item.category.root.name
+                %br
+                =link_to "#" do
+                  =">#{@item.category.parent.name}"
+                %br
+                =link_to "#" do
+                  =">#{@item.category.name}"
             %tr
               %th 商品の状態
-              %td 新品、未使用
+              %td
+                =@item.condition.name
             %tr
               %th 配送料の負担
-              %td 送料込み（出品者負担）
-            %tr
-              %th 配送の方法
-              %td ゆうパック
+              %td
+                =@item.shipping_fee_payer.name
             %tr
               %th 発送元の地域
-              %td 香川県
+              %td
+                =@item.prefecture.name
             %tr
               %th 発送日の目安
-              %td 4〜7日で発送
+              %td
+                =@item.preparation_day.name
       .OptionArea
         %ul.FavUl
           =link_to "#",class: "FavTag" do
@@ -66,7 +83,7 @@
           
     .Comment
       %ul.CommentForm
-      = form_with(url: "#", local: true, method: :post, class: "Form") do |f|
+      = form_with(url: "#", class: "Form") do |f|
         =f.text_area :hoge ,class: "CommentText"
         %p.NoticeMsg 
           相手のことを考え丁寧なコメントを心がけましょう。
@@ -78,17 +95,18 @@
           コメントする
     .RelatedItemsUserSection
       =link_to "#", class: "SectionTitle" do
-        さばさんのその他の出品
+        =@item.user.nickname
+        のその他の出品
       .RelatedItemsUser
         .RelatedItemUser
           =link_to "#", class: "Item__Wrapper" do
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
@@ -98,10 +116,10 @@
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
@@ -111,10 +129,10 @@
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
@@ -124,10 +142,10 @@
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
@@ -140,10 +158,10 @@
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
@@ -153,10 +171,10 @@
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
@@ -166,10 +184,10 @@
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
@@ -179,13 +197,13 @@
             .ItemImage
               = image_tag 'pict2/mac.jpg', alt:'Item', class:"RelatedItemIMG"
             .ItemText
-              %p.ItemName うどん
+              %p.ItemName  パソコン
               .ItemPrice
                 %ul.PriceUl
-                  %li.Priceli 5,000円
+                  %li.Priceli  75,000円
                   %li.Priceli
                     = icon('fas', 'star')
                     4
                 %p.Tax (税込)
 
-= render 'layouts/footer'
+  = render 'layouts/footer'

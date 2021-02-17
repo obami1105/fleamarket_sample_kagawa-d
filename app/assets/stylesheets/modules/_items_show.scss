@@ -77,19 +77,55 @@
 .Item__Status{
   margin: 0;
   padding: 0;
-  .Item__Status__Status{
-    font-weight: 600;
-    font-size: 16px;
-    border-radius: 0;
-    cursor: not-allowed;
+  .ItemEdit{
+    margin: 10px 0;
+    color: $color-block;
+    font-weight: bold;
     display: block;
     width: 100%;
     line-height: 48px;
+    font-size: 14px;
+    border-radius: 4px;
     border: 1px solid transparent;
+    cursor: pointer;
     text-align: center;
     background-color: #ccc;
-    color: $color-text;
+    text-decoration: none;
+    box-sizing: border-box;
   }
+}
+.ItemDelete{
+  margin-top: 15px;
+  margin: 10px 0;
+  background-color: red;
+  color: $color-block;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ItemBuyer{
+  border: 1px solid $color-main;
+  @include btn(#3CCACE);
+  margin: 10px 0;
+  color: $color-block;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .Item__Title{
@@ -141,7 +177,7 @@
   display: flex;
   list-style: none;
   .FavTag{
-    color: #0099e8;
+    color: $color-user;
     text-decoration: none;
     .Favolite{
       margin-right: auto;
@@ -286,3 +322,4 @@
     }
   }
 }
+
