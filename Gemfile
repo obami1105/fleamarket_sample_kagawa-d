@@ -81,4 +81,7 @@ gem 'active_hash'
 gem 'jquery-rails'
 gem 'gretel'
 gem 'fog-aws'
+gem 'omniauth', '1.9.1'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
