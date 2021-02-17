@@ -3,9 +3,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :items, only: [:new, :create, :show] do
+  resources :items, only: [:new, :create, :show, :purchase] do
     collection do
       get 'search'
+      get ':id/purchase', to: 'items#purchase', as: 'purchase'
+      post 'buy/:id', to: 'items#buy', as: 'buy'
+      get  'done', to: 'items#done', as: 'done'
     end
   end
   root 'items#index'
