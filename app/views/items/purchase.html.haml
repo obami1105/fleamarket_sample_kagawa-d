@@ -8,27 +8,31 @@
       .Information
         .Information__group
           %figure.Information__item
-            = image_tag 'pict2/ご飯.png' ,class:"Item__Img"
+            = image_tag @item.item_image.image_url.url , class:"Item__Img"
         .Information__text
-          %p.Information__Field
-            ♡白米ちゃんやで♡
+          %p.Information__Field= @item.name
           %p.FeePrice
             %span.FeePrice__Fee 送料込（税込）
-            %span.FeePrice__Price
-              ¥100,000
+            %span.FeePrice__Price ¥#{@item.price}
     .PurchaseField
       .PaymentAmount
         %span 支払金額
-        %span#PaymentPrice
-          ¥100,000
+        %span#PaymentPrice¥#{@item.price}
     .PurchaseField
       .PaymentMethod
         .PaymentMethod__text
           %h3 支払い方法
-        -# リンク先変更＊サーバーサイド実装後
-        = link_to "#", class: "PaymentMethod__Credit" do
-          =icon('fa', 'plus-circle')
-          %span 登録して下さい
+          - if @card_info.blank?
+            = link_to new_credit_card_path do
+              = icon('fa', 'plus-circle')
+              クレジットカードを登録してください
+          - else
+            .RegistCard
+              = icon('fas', 'check-circle')
+              .RegistCard__Info
+                %p #{@card_num}
+                %p 有効期限 #{@exp_month + " / " + @exp_year}
+                = image_tag "icon/#{@card_src}", class: "Card__brand--image", alt: @card_brand
     .PurchaseField
       .Address
         .Address__Field
@@ -37,16 +41,13 @@
           -# リンク先変更＊サーバーサイド実装後
           = link_to '変更する>', "#" , class: "AddressChange"
         .Address__Information
-          %p
-            〒768-0060
-          %p
-            香川県
-            観音寺市
-            観音寺町
-            １−１
-          %p
-            山田 花子
+          %p 〒 #{@post_code}
+          %p= @full_address
+          %p= @user_fullname
     .CreditCardField
-      カード情報を登録して下さい。
-
+      - if @card_info.blank?
+        カード情報を登録して下さい。
+      - else
+        = link_to buy_items_path, class: 'Btn', method: :post do
+          購入
   = render 'layouts/footer_user'
