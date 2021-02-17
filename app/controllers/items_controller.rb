@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
     @items=Item.includes(:item_image).order("created_at DESC").limit(10)
@@ -24,6 +24,16 @@ class ItemsController < ApplicationController
     else
       @categories = Category.roots
       render :new
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if current_user.id == @item.user_id
+      @item.destroy
+      redirect_to root_path
+    else
+      redirect_to item_path(@item)
     end
   end
 
