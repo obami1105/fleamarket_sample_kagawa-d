@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  
   get 'api/items/category',to: 'items#get_category'
 
   devise_scope :user do
@@ -18,5 +19,5 @@ Rails.application.routes.draw do
 
   get 'purchase', to: 'items#purchase'
   get 'mypage', to: 'users#show'
-  resources :credit_cards, only: [:index, :new]
+  resources :credit_cards, only: [:index, :new, :show]
 end

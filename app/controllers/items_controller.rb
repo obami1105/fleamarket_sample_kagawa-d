@@ -27,9 +27,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  
   def show
-  end 
+    @item = Item.find(params[:id])
+  end
 
   def search
     @items = Item.search(params[:keyword])
