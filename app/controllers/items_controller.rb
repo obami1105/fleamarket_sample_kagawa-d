@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  
   require 'payjp'
   before_action :authenticate_user!, only: [:new, :create, :purchase]
   before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase,:buy]
