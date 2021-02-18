@@ -9,17 +9,17 @@
         %span.required 必須
         %p.photo １枚のみアップロードできます
         .ImageBox__Wrapper
-          -# .Image__Wrapper
-          -#   .ImageBox__Photo
-          -#     = image_tag @item.item_image.image_url.url, alt:'Item', class:"ItemIMG"
-          -#   .ImageBox__Button
-          -#     .ImageBox__Button1
-          -#       %label{ class: 'ImageBox__group__input__image__hidden',for:"image_1"}
-          -#         = f.fields_for :item_image, @item do |item_image| 
-          -#           = item_image.file_field :image_url, class: 'ImageBox__group__form',id:'image_1'
-          -#           .Name 編集
-          -#     .ImageBox__Button1 削除
-          .ImageBox__field
+          .Image__Wrapper
+            .ImageBox__Photo
+              = image_tag @item.item_image.image_url.url, alt:'Item', class:"ItemIMG"
+            .ImageBox__Button
+              -# .ImageBox__Button1
+              -#   %label{ class: 'ImageBox__group__input__image__hidden',for:"image_1"}
+              -#     = f.fields_for :item_image, @item do |item_image| 
+              -#       = item_image.file_field :image_url, class: 'ImageBox__group__form',id:'image_1'
+              -#       .Name 編集
+              -# .ImageBox__Button1 削除
+          .ImageBox__fieldE
             %label{ class: 'ImageBox__group__input__image__hidden',for:"image_1"}
               = f.fields_for :item_image, @item do |item_image| 
                 = item_image.file_field :image_url, class: 'ImageBox__group__form',id:'image_1'

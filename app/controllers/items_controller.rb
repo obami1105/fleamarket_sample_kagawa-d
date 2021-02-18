@@ -34,8 +34,12 @@ class ItemsController < ApplicationController
 
   def update
     @item=Item.includes(:item_image).find(params[:id])
-    @item.update(item_params)
-    redirect_to action: :show
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      @categories = Category.roots
+      redirect_to edit_item_path(@item.id)
+    end
   end
   
   def destroy
