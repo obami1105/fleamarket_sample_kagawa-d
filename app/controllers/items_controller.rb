@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items=Item.includes(:item_image).order("created_at DESC").limit(10)
@@ -37,8 +38,17 @@ class ItemsController < ApplicationController
     redirect_to action: :show
   end
   
+  def destroy
+    if current_user.id == @item.user_id
+      @item.destroy
+      redirect_to root_path
+    else
+      redirect_to item_path(@item)
+    end
+  end
+
   def show
-  end 
+  end
 
   def search
     @items = Item.search(params[:keyword])
@@ -48,6 +58,11 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(:trading_status, :name, :category_id, :introduction, :condition_id, :shipping_fee_payer_id, :prefecture_id, :preparation_day_id, :price, item_image_attributes: [:id, :image_url]).merge(user_id: current_user.id)
   end 
