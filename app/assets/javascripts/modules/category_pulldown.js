@@ -19,7 +19,7 @@ $(function(){
   }
 
 
-  $('.category__box').on('change','.item__category',function(){
+  $('.category__box').on('change','item__category',function(){
     $(this).nextAll().remove()
     const category_id=$(this).val()
 

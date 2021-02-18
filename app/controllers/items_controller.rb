@@ -27,6 +27,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item=Item.includes(:item_image).find(params[:id])
+  end
+
+  def update
+    @item=Item.includes(:item_image).find(params[:id])
+    @item.update(item_params)
+    redirect_to action: :show
+  end
   
   def show
   end 
