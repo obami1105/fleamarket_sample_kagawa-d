@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  
   require 'payjp'
   before_action :authenticate_user!, only: [:new, :create, :purchase]
   before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase,:buy]
@@ -48,8 +47,7 @@ class ItemsController < ApplicationController
       @full_address = @address.prefecture.name + @address.city + @address.house_number
       @user = User.find(current_user[:id])
       @user_fullname = @user.family_name + ' ' + @user.first_name
-      if @card.blank?
-      else
+      unless @card.blank?
         Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
         customer = Payjp::Customer.retrieve(@card.customer_id)
         @card_info = customer.cards.retrieve(@card.card_id)

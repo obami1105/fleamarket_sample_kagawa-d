@@ -26,8 +26,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    if @card.blank?
-    else
+    unless @card.blank?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(@card.card_id)
@@ -59,8 +58,7 @@ class CreditCardsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
-      if @card.destroy
-      else
+      unless @card.destroy
         redirect_to credit_card_path, alert: "削除できませんでした。"
       end
     end
