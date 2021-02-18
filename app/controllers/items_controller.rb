@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   
   require 'payjp'
-  before_action :authenticate_user!, only: [:new, :create, :purchase]
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase,:buy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :purchase]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase, :buy]
   before_action :set_card, only: [:purchase,:buy]
 
   def index
@@ -31,8 +31,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user.id == @item.user_id
+      @item.destroy
+      redirect_to root_path
+    else
+      redirect_to item_path(@item)
+    end
+  end
+
   def show
-    @item = Item.find(params[:id])
   end
 
   def search
