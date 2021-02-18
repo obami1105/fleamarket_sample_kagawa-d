@@ -27,12 +27,11 @@
               送料別
         .Item__Status
           - if @item.trading_status == 0
-            - if user_signed_in?
-              - if current_user.id == @item.user_id
-                = link_to '商品を編集する', '#', method: :get, class:"ItemEdit"
-                = link_to '商品を削除する', item_path(@item), method: :delete, class:"ItemDelete"
-              - else user_signed_in? && current_user.id
-                = link_to '購入画面へ進む', purchase_items_path, class:"ItemBuyer"
+            - if user_signed_in? && current_user.id == @item.user_id
+              = link_to '商品を編集する', '#', method: :get, class:"ItemEdit"
+              = link_to '商品を削除する', item_path(@item), method: :delete, class:"ItemDelete"
+            - elsif user_signed_in? && current_user.id
+              = link_to '購入画面へ進む', purchase_items_path, class:"ItemBuyer"
           - else
             .ItemSoldout
               売り切れました
@@ -211,4 +210,3 @@
                 %p.Tax (税込)
 
   = render 'layouts/footer'
-  
