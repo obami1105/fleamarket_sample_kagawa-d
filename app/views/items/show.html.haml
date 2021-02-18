@@ -29,7 +29,7 @@
           - if user_signed_in?
             - if current_user.id == @item.user_id
               = link_to '商品を編集する', "#", class:"ItemEdit"
-              = link_to '商品を削除する', "#", class:"ItemDelete"
+              = link_to '商品を削除する', item_path(@item), method: :delete, class:"ItemDelete"
             - else user_signed_in? && current_user.id
               = link_to '購入画面へ進む', "#", class:"ItemBuyer"
       .Item__Title
