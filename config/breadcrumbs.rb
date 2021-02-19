@@ -24,3 +24,8 @@ crumb :search do
   link "検索結果", search_items_path
   parent :root
 end
+
+crumb :done do
+  link "フリマ", root_path
+  parent :root
+end

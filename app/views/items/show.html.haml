@@ -1,4 +1,4 @@
-= render 'layouts/header' 
+= render 'layouts/header'
 -# パンくずリスト：商品詳細ページ
 - breadcrumb :item
 = render "layouts/breadcrumb"
@@ -26,12 +26,15 @@
             - else
               送料別
         .Item__Status
-          - if user_signed_in?
-            - if current_user.id == @item.user_id
-              = link_to '商品を編集する', edit_item_path(@item.id), class:"ItemEdit"
+          - if @item.trading_status == 0
+            - if user_signed_in? && current_user.id == @item.user_id
+              = link_to '商品を編集する', '#', method: :get, class:"ItemEdit"
               = link_to '商品を削除する', item_path(@item), method: :delete, class:"ItemDelete"
-            - else user_signed_in? && current_user.id
-              = link_to '購入画面へ進む', "#", class:"ItemBuyer"
+            - elsif user_signed_in? && current_user.id
+              = link_to '購入画面へ進む', purchase_items_path, class:"ItemBuyer"
+          - else
+            .ItemSoldout
+              売り切れました
       .Item__Title
         =@item.introduction
       .Item__Tables
@@ -43,7 +46,7 @@
                 =@item.user.nickname
             %tr
               %th カテゴリー
-              %td 
+              %td
                 =link_to "#" do
                   = @item.category.root.name
                 %br
@@ -80,12 +83,12 @@
             %li.Report
               = icon('fa', 'flag')
               不適切な商品の通報
-          
+
     .Comment
       %ul.CommentForm
       = form_with(url: "#", class: "Form") do |f|
         =f.text_area :hoge ,class: "CommentText"
-        %p.NoticeMsg 
+        %p.NoticeMsg
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。

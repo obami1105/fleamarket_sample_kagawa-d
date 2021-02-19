@@ -1,0 +1,22 @@
+= render 'layouts/header'
+- breadcrumb :done
+= render "layouts/breadcrumb"
+
+%main.Mypage
+  .Mypage__inner
+    = render 'users/mypage_side'
+    .Mypage__contents
+      .Main__contents
+        .Contents__header
+          %h2 商品購入
+        .Contents__body
+          = alert
+          .Contents--card
+            %section.Card__info
+              .Card__info
+                %p
+                  商品の購入が完了しました。
+                  %br 発送までお待ち下さい。
+              =link_to 'トップへ戻る', root_path, class: 'Btn'
+              = link_to "マイページに戻る", mypage_path, class: "Btn"
+= render 'layouts/footer'
