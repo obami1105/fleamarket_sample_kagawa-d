@@ -1,5 +1,4 @@
 = render 'layouts/header'
--# パンくずリスト:フリマ>マイページ>支払い方法
 - breadcrumb :credit_cards
 = render "layouts/breadcrumb"
 
@@ -12,13 +11,10 @@
           %h2 支払い方法
         .Contents__body
           .Contents--card
-            %section
+            %section.Card__info
+              .Card__info クレジットカードの登録を削除しました
+              = link_to "マイページに戻る", mypage_path, class: "Btn"
               = link_to new_credit_card_path, class: 'Btn' do
                 = icon('far', 'credit-card')
-                クレジットカードを追加する
-            %section
-              %p
-                =link_to '#' do
-                  支払い方法について
-                  = icon('fas', 'chevron-right', class: "Nav__icon")
+                クレジットカード新規登録
 = render 'layouts/footer'

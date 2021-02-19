@@ -1,0 +1,33 @@
+= render 'layouts/header'
+- breadcrumb :credit_cards
+= render "layouts/breadcrumb"
+
+%main.Mypage
+  .Mypage__inner
+    = render 'users/mypage_side'
+    .Mypage__contents
+      .Main__contents
+        .Contents__header
+          %h2 支払い方法
+        .Contents__body
+          .Contents--card
+            - if @card_info.blank?
+              %section
+                = link_to new_credit_card_path, class: 'Btn' do
+                  = icon('far', 'credit-card')
+                  クレジットカードを追加する
+            - else
+              .RegistCard
+                = icon('fas', 'check-circle')
+                .RegistCard__Info
+                  %p #{@card_num}
+                  %p 有効期限 #{@exp_month + " / " + @exp_year}
+                  = image_tag "icon/#{@card_src}", class: "Card__brand--image", alt: @card_brand
+                = link_to credit_card_path, method: :delete, class: "Btn--line Card__deleted--btn" do
+                  削除する
+            %section
+              %p
+                =link_to '#' do
+                  支払い方法について
+                  = icon('fas', 'chevron-right', class: "Nav__icon")
+= render 'layouts/footer'

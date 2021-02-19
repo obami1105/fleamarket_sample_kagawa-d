@@ -19,4 +19,5 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
   has_one :destination, dependent: :destroy
+  has_one :credit_card, dependent: :destroy
 end
