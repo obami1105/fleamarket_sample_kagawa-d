@@ -21,13 +21,13 @@
     }
     &__midle {
       padding: 32px 64px;
-      justify-content: center;
       &__block {
         margin: 0 auto;
         max-width: 343px;
       }
       &__btn {
         position: relative;
+        justify-content: center;
         margin: 0 auto;
         display: block;
         max-width: 343px;

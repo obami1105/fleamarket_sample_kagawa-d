@@ -7,6 +7,7 @@
     border-radius: 5px;
     display: block;
     justify-content: center;
+    padding: 40px 40px 64px;
     &__main {
       padding: 40px 40px 64px;
       &__block {
@@ -38,6 +39,11 @@
   }
   .input__half__right {
     width: calc(50% - 6px);
+  }
+
+  .contents__midle {
+    margin-top: 64px;
+    margin-bottom: 64px;
   }
 
   .box {

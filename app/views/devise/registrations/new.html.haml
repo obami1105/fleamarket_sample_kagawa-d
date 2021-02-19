@@ -4,10 +4,10 @@
 
     .contents
       %h2 会員情報入力
-      .contents__main
+      .contents__main__block
         = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
           = render "devise/shared/error_messages", resource: resource
-          .contents__login__midle
+          .contents__midle
             = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--google" do
               = icon('fab', 'google',  class: "contents__login__midle__btn--icon")
               Googleで登録
