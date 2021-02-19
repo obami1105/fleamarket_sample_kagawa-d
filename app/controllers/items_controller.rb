@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
     if current_user.id == @item.user_id
       redirect_to item_path(@item.id)
     else
-      @address = Destination.find(current_user[:id])
+      @address = current_user.destination
       @post_code = @address.post_code
       @full_address = @address.prefecture.name + @address.city + @address.house_number
       @user = User.find(current_user[:id])
