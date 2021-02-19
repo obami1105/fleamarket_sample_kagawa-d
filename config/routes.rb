@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
-  root 'items#index'
   resources :items, only: [:new, :create, :show, :destroy, :edit, :update, :purchase] do
     collection do
       get 'search'
