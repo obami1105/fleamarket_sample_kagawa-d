@@ -38,4 +38,5 @@ class User < ApplicationRecord
     { user: user, sns: sns}
   end
 
+  has_one :credit_card, dependent: :destroy
 end

@@ -12,7 +12,6 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer    :preparation_day_id,    null: false
       t.integer    :price,                 null: false
       t.timestamps
-
     end
   end
 end
