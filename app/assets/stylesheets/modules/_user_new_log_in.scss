@@ -1,5 +1,4 @@
 // ユーザーログイン画面
-.user__all__user_log_in {
   .contents__login {
     width: 456px;
     margin: 0 auto;
@@ -8,6 +7,7 @@
     &__top {
       padding: 40px 64px;
       text-align: center;
+      border-bottom: 1px solid #eee;
       .new_user_btn {
         display: block;
         margin: 8px 0 0;
@@ -20,7 +20,6 @@
       }
     }
     &__midle {
-      border-top: 1px solid #eee;
       padding: 32px 64px;
       &__block {
         margin: 0 auto;
@@ -28,8 +27,10 @@
       }
       &__btn {
         position: relative;
+        justify-content: center;
+        margin: 0 auto;
         display: block;
-        width: 100%;
+        max-width: 343px;
         line-height: 48px;
         font-size: 14px;
         margin: 16px 0 0;
@@ -81,4 +82,4 @@
     background-color: #fff3cd;
     color: #f08080;
   }
-}
+
