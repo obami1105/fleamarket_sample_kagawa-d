@@ -15,9 +15,6 @@
         = link_to user_facebook_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--facebook" do
           = icon('fab', 'facebook-square',  class: "contents__login__midle__btn--icon")
           Facebookでログイン
-        -# = link_to "#", class: "contents__login__midle__btn contents__login__midle__btn--apple" do
-        -#   = icon('fab', 'apple',  class: "contents__login__midle__btn--icon")
-        -#   Appleでログイン
 
       .contents__login__under
         = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
