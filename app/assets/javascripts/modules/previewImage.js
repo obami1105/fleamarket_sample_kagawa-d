@@ -1,7 +1,7 @@
 $(function () {
   function buildImage(url) {
     const imageEl = `
-      <img src="${url}" class="ImageBox__group__form__element">
+      <img src="${url}" class="image-select">
       `;
     return imageEl;
   }
