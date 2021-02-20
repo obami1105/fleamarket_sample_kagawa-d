@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  
+  before_action :env_status
+
   def facebook
     authorization
   end
@@ -26,6 +29,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       render template: 'devise/registrations/new'
     end
   end
+
+  def env_status
+    if Rails.env.production?
+      redirect_to root_path
+    end
+  end
+
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

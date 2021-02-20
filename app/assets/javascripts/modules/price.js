@@ -1,7 +1,7 @@
 
 $(function(){
-  $('.Form__input__price').change(function(){
-    let data = $('.Form__input__price').val();
+  $('.Form__input__price').keydown(function(){
+    var data = $('.Form__input__price').val();
       // "販売価格"をdata変数に代入
     let fee = Math.round(data * 0.1)
     if(Number.isInteger(fee)){
