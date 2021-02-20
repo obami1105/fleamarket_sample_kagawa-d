@@ -30,6 +30,20 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item=Item.includes(:item_image).find(params[:id])
+  end
+
+  def update
+    @item=Item.includes(:item_image).find(params[:id])
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      @categories = Category.roots
+      redirect_to edit_item_path(@item.id)
+    end
+  end
+  
   def destroy
     if current_user.id == @item.user_id
       @item.destroy

@@ -1,11 +1,12 @@
+
 $(function(){
   $('.Form__input__price').change(function(){
-    var data = $('.Form__input__price').val();
+    let data = $('.Form__input__price').val();
       // "販売価格"をdata変数に代入
-    var fee = Math.round(data * 0.1)
+    let fee = Math.round(data * 0.1)
     if(Number.isInteger(fee)){
-      var profit = (data - fee)
-      var formatter = new Intl.NumberFormat();
+      let profit = (data - fee)
+      let formatter = new Intl.NumberFormat();
         // ３桁ごとにカンマ区切りをする。
       $('.Value1').html(formatter.format(fee))
       $('.Value1').prepend('¥')

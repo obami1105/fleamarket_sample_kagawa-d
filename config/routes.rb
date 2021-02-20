@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
-  resources :items, only: [:new, :create, :show, :destroy, :purchase] do
+  resources :items, only: [:new, :create, :show, :destroy, :edit, :update, :purchase] do
     collection do
       get 'search'
       get ':id/purchase', to: 'items#purchase', as: 'purchase'
