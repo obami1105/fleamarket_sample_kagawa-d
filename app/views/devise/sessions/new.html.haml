@@ -8,13 +8,14 @@
         %p アカウントをお持ち出ない方はこちら
         = link_to "新規会員登録", new_user_registration_path, class: "new_user_btn"
 
-      .contents__login__midle
-        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--google" do
-          = icon('fab', 'google',  class: "contents__login__midle__btn--icon")
-          Googleでログイン
-        = link_to user_facebook_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--facebook" do
-          = icon('fab', 'facebook-square',  class: "contents__login__midle__btn--icon")
-          Facebookでログイン
+      - unless Rails.env.production?
+        .contents__login__midle
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--google" do
+            = icon('fab', 'google',  class: "contents__login__midle__btn--icon")
+            Googleでログイン
+          = link_to user_facebook_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--facebook" do
+            = icon('fab', 'facebook-square',  class: "contents__login__midle__btn--icon")
+            Facebookでログイン
 
       .contents__login__under
         = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|

@@ -7,13 +7,14 @@
       .contents__main__block
         = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
           = render "devise/shared/error_messages", resource: resource
-          .contents__midle
-            = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--google" do
-              = icon('fab', 'google',  class: "contents__login__midle__btn--icon")
-              Googleで登録
-            = link_to user_facebook_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--facebook" do
-              = icon('fab', 'facebook-square',  class: "contents__login__midle__btn--icon")
-              Facebookで登録
+          - unless Rails.env.production?
+            .contents__midle
+              = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--google" do
+                = icon('fab', 'google',  class: "contents__login__midle__btn--icon")
+                Googleで登録
+              = link_to user_facebook_omniauth_authorize_path, method: :post, class: "contents__login__midle__btn contents__login__midle__btn--facebook" do
+                = icon('fab', 'facebook-square',  class: "contents__login__midle__btn--icon")
+                Facebookで登録
           .contents__main__block
             .field
               = f.label :ニックネーム
