@@ -85,3 +85,12 @@
 
 ### Association
 - belongs_to :item
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|null: false, foreign_key: true|
+|uid|string|null: false|
+|user_id|bigint||
+
+### Association

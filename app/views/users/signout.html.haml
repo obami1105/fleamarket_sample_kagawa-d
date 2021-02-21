@@ -6,7 +6,6 @@
       %h2 ログアウト
       .DoneMessage.Logout
         .DoneMessage__inner
-          %p
-            ログアウトが完了しました
+          = render 'layouts/flash'
           =link_to 'トップへ戻る', root_path, class: 'Btn'
     = render 'layouts/footer_user'
