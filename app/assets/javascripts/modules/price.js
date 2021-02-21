@@ -1,6 +1,6 @@
 
 $(function(){
-  $('.Form__input__price').keydown(function(){
+  $('.Form__input__price').keyup(function(){
     var data = $('.Form__input__price').val();
       // "販売価格"をdata変数に代入
     let fee = Math.round(data * 0.1)
