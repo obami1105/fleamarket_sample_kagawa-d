@@ -41,7 +41,8 @@
           %span.required 必須
           .category__box
             = f.collection_select :category_id, Category.roots, :id, :name, {include_blank: "選択してください", selected: @item.category.root_id}, {class: "section__second item__category"}
-            = f.collection_select :category_id, @item.category.root.children, :id, :name, {include_blank: "選択してください", selected: @item.category.parent_id}, {class: "section__second item__category"}
+            - unless @item.category.root_id==@item.category.parent_id
+              = f.collection_select :category_id, @item.category.root.children, :id, :name, {include_blank: "選択してください", selected: @item.category.parent_id}, {class: "section__second item__category"}
             = f.collection_select :category_id, @item.category.siblings, :id, :name, {include_blank: "選択してください", selected: @item.category_id}, {class: "section__second item__category"}
 
         .Item__box

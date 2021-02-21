@@ -50,9 +50,10 @@
               %td
                 =link_to "#" do
                   = @item.category.root.name
-                %br
-                =link_to "#" do
-                  =">#{@item.category.parent.name}"
+                - unless @item.category.root_id==@item.category.parent_id
+                  %br
+                  =link_to "#" do
+                    =">#{@item.category.parent.name}"
                 %br
                 =link_to "#" do
                   =">#{@item.category.name}"
