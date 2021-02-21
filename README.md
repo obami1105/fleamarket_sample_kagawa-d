@@ -19,15 +19,14 @@
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|seller|references|null: false, foreign_key: { to_table: :users }|
-|buyer|references|foreign_key: { to_table: :users }|
-|trading_status|integer|null: false|
+|user|references|null: false, foreign_key: true|
+|trading_status|integer|null: false, default: 0|
 |name|string|null: false|
 |introduction|text|null: false|
-|category|references|null: false, foreign_key: true|
-|item_condition_id|integer|null: false|
+|category_id|integer|null: false, foreign_key: true|
+|condition_id|integer|null: false|
 |shipping_fee_payer_id|integer|null: false|
-|shipping_area_id|integer|null: false|
+|prefecture_id|integer|null: false|
 |preparation_day_id|integer|null: false|
 |price|integer|null: false|
 
@@ -94,3 +93,4 @@
 |user_id|bigint||
 
 ### Association
+- belongs_to :user, optional: true

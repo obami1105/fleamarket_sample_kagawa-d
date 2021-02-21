@@ -99,29 +99,29 @@
           = icon('fa', 'comment')
           コメントする
     .RelatedItemsUserSection
-      = link_to "#", class: "SectionTitle" do
-        = @item.user.nickname
-        のその他の出品
-      .RelatedItemsUser
-        - @items.each do |item|
-          .RelatedItemUser
-            = link_to item_path(item.id), method: :get, class: "Item__Wrapper" do
-              .ItemImage
-                = image_tag item.item_image.image_url.url, class:"RelatedItemIMG"
-                - if item.trading_status == 1
-                  .SoldMark
-                    %span SOLD
-              .ItemText
-                %p.Item__text--name
-                  =item.name
-                .ItemPrice
-                  %ul.PriceUl
-                    %li.Priceli
-                      - price = item.price
-                      = price.to_s(:delimited, delimiter: ',')
-                      円
-                    %li.Priceli
-                      = icon('fas', 'star', '1')
-                  %p.Tax  (税込)
-
-  = render 'layouts/footer'
+      - if @items.present?
+        = link_to "#", class: "SectionTitle" do
+          = @item.user.nickname
+          のその他の出品
+        .RelatedItemsUser
+          - @items.each do |item|
+            .RelatedItemUser
+              = link_to item_path(item.id), method: :get, class: "Item__Wrapper" do
+                .ItemImage
+                  = image_tag item.item_image.image_url.url, class:"RelatedItemIMG"
+                  - if item.trading_status == 1
+                    .SoldMark
+                      %span SOLD
+                .ItemText
+                  %p.Item__text--name
+                    =item.name
+                  .ItemPrice
+                    %ul.PriceUl
+                      %li.Priceli
+                        - price = item.price
+                        = price.to_s(:delimited, delimiter: ',')
+                        円
+                      %li.Priceli
+                        = icon('fas', 'star', '1')
+                    %p.Tax  (税込)
+= render 'layouts/footer'
