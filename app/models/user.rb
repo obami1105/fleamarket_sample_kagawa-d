@@ -5,19 +5,22 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  validates :nickname, :birth_date, presence: true
-  validates :password, presence: true, length: { minimum: 7 }
 
+  VALID_PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/ #半角英文字・数値・大文字・小文字含む
   VALID_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/
-  validates :first_name, presence: true, format: { with: VALID_NAME_REGEX }
-  validates :family_name, presence: true, format: { with: VALID_NAME_REGEX }
-
   VALID_KANA_REGEX = /\A[ぁ-んー－]+\z/
-  validates :first_name_kana, presence: true, format: { with: VALID_KANA_REGEX }
-  validates :family_name_kana, presence: true, format: { with: VALID_KANA_REGEX }
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+
+  with_options presence: true do
+    validates :nickname
+    validates :email, format: { with: VALID_EMAIL_REGEX, allow_blank: true}
+    validates :password, length: { minimum: 7 ,allow_blank: true}, format: { with: VALID_PASSWORD_REGEX,allow_blank: true}
+    validates :first_name, format: { with: VALID_NAME_REGEX, allow_blank: true}
+    validates :family_name, format: { with: VALID_NAME_REGEX, allow_blank: true}
+    validates :first_name_kana, format: { with: VALID_KANA_REGEX, allow_blank: true}
+    validates :family_name_kana, format: { with: VALID_KANA_REGEX, allow_blank: true}
+    validates :birth_date
+  end
 
   has_one :destination, dependent: :destroy
   has_many :sns_credentials, dependent: :destroy

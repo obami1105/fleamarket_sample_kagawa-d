@@ -1,12 +1,12 @@
 class Destination < ApplicationRecord
-  belongs_to :user, optional: true
-
-  validates :post_code,      presence: true
-  validates :prefecture_id,  presence: true
-  validates :city,           presence: true
-  validates :house_number,   presence: true
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
+  belongs_to :user, optional: true
 
+  with_options presence: true do
+    validates :post_code, format: { with: /\A\d{7}\z/, message: "は半角数字７桁で入力してください", allow_blank: true} #ハイフンなし7桁
+    validates :prefecture_id, inclusion: { in: 1..47, message: "を選択してください", allow_blank: true}
+    validates :city
+    validates :house_number
+  end
 end
