@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @items = Item.where(user_id: @item.user_id).where.not(id: @item.id).order("created_at DESC").limit(10)
   end
 
   def search

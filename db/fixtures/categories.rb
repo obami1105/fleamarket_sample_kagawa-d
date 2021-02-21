@@ -1,4 +1,4 @@
-.seed(:id,
+Category.seed(:id,
   {:id=>1, :name=>"レディース", :ancestry=>nil},
   {:id=>2, :name=>"メンズ", :ancestry=>nil},
   {:id=>3, :name=>"ベビー・キッズ", :ancestry=>nil},
@@ -101,7 +101,7 @@
   {:id=>100, :name=>"オーラルケア", :ancestry=>"7"}
   )
   # BREAK EVAL
-  .seed(:id,
+  Category.seed(:id,
   {:id=>101, :name=>"リラクゼーション", :ancestry=>"7"},
   {:id=>102, :name=>"ダイエット", :ancestry=>"7"},
   {:id=>103, :name=>"その他", :ancestry=>"7"},
@@ -204,7 +204,7 @@
   {:id=>200, :name=>"カジュアルパンツ", :ancestry=>"1/16"}
   )
   # BREAK EVAL
-  .seed(:id,
+  Category.seed(:id,
   {:id=>201, :name=>"ハーフパンツ", :ancestry=>"1/16"},
   {:id=>202, :name=>"チノパン", :ancestry=>"1/16"},
   {:id=>203, :name=>"ワークパンツ/カーゴパンツ", :ancestry=>"1/16"},
@@ -307,7 +307,7 @@
   {:id=>300, :name=>"腕時計(デジタル)", :ancestry=>"1/27"}
   )
   # BREAK EVAL
-  .seed(:id,
+  Category.seed(:id,
   {:id=>301, :name=>"ラバーベルト", :ancestry=>"1/27"},
   {:id=>302, :name=>"レザーベルト", :ancestry=>"1/27"},
   {:id=>303, :name=>"金属ベルト", :ancestry=>"1/27"},
@@ -410,7 +410,7 @@
   {:id=>400, :name=>"エコバッグ", :ancestry=>"2/37"}
   )
   # BREAK EVAL
-  .seed(:id,
+  Category.seed(:id,
   {:id=>401, :name=>"その他", :ancestry=>"2/37"},
   {:id=>402, :name=>"スーツジャケット", :ancestry=>"2/38"},
   {:id=>403, :name=>"スーツベスト", :ancestry=>"2/38"},
@@ -513,7 +513,7 @@
   {:id=>500, :name=>"トップス(タンクトップ)", :ancestry=>"3/50"}
   )
   # BREAK EVAL
-  .seed(:id,
+  Category.seed(:id,
   {:id=>501, :name=>"トップス(その他)", :ancestry=>"3/50"},
   {:id=>502, :name=>"スカート", :ancestry=>"3/50"},
   {:id=>503, :name=>"パンツ", :ancestry=>"3/50"},
@@ -616,7 +616,7 @@
   {:id=>600, :name=>"セミダブルベッド", :ancestry=>"4/62"}
   )
   # BREAK EVAL
-  .seed(:id,
+  Category.seed(:id,
   {:id=>601, :name=>"ダブルベッド", :ancestry=>"4/62"},
   {:id=>602, :name=>"ワイドダブルベッド", :ancestry=>"4/62"},
   {:id=>603, :name=>"クイーンベッド", :ancestry=>"4/62"},
@@ -719,7 +719,7 @@
   {:id=>700, :name=>"バレンタインデー", :ancestry=>"4/73"}
   )
   # BREAK EVAL
-  .seed(:id,
+  Category.seed(:id,
   {:id=>701, :name=>"ひな祭り", :ancestry=>"4/73"},
   {:id=>702, :name=>"子どもの日", :ancestry=>"4/73"},
   {:id=>703, :name=>"母の日", :ancestry=>"4/73"},
