@@ -31,7 +31,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item=Item.includes(:item_image).find(params[:id])
+    unless current_user.id == @item.user_id
+      redirect_to item_path(@item.id)
+    else
+      @item=Item.includes(:item_image).find(params[:id])
+    end
   end
 
   def update
@@ -54,6 +58,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @items=Item.includes(:item_image).order("created_at DESC").limit(10)
   end
 
   def search
