@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items=Item.includes(:item_image).order("created_at DESC").limit(10)
+    @items = Item.where(user_id: @item.user_id).where.not(id: @item.id).order("created_at DESC").limit(12)
   end
 
   def search
