@@ -34,7 +34,6 @@ class ItemsController < ApplicationController
     unless current_user.id == @item.user_id
       redirect_to item_path(@item.id)
     else
-      # @item=Item.includes(:item_image).find(params[:id])
       if @item.trading_status==1
         redirect_to item_path(@item.id)
       end
