@@ -174,24 +174,24 @@ describe Item do
       expect(@item.errors[:price]).to include("を入力してください")
     end
 
-    # priceの範囲{ in: 300..9999999 }の範囲
+    # priceの範囲{ 300~9999999 }
     it "priceが300未満は登録できないこと" do
       @item.price = 299
       @item.valid?
-      expect(@item.errors[:price]).to include("は一覧にありません")
+      expect(@item.errors[:price]).to include("は300以上の値にしてください")
     end
 
     it "priceが9999999を超えると登録できないこと" do
       @item.price = 10000000
       @item.valid?
-      expect(@item.errors[:price]).to include("は一覧にありません")
+      expect(@item.errors[:price]).to include("は9999999以下の値にしてください")
     end
 
     # priceは数字
     it "priceが文字列では登録できないこと" do
       @item.price = "９９９９９９９"
       @item.valid?
-      expect(@item.errors[:price]).to include("は一覧にありません")
+      expect(@item.errors[:price]).to include("は数値で入力してください")
     end
 
     # item_image

@@ -27,7 +27,7 @@ class Item < ApplicationRecord
   validates :shipping_fee_payer_id, numericality:{ only_integer: true }, inclusion: { in: 1..2 }, allow_blank: true
   validates :prefecture_id, numericality:{ only_integer: true }, inclusion: { in: 1..47 }, allow_blank: true
   validates :preparation_day_id, numericality:{ only_integer: true }, inclusion: { in: 1..3 }, allow_blank: true
-  validates :price, numericality:{ only_integer: true }, inclusion: { in: 300..9999999 }, allow_blank: true
+  validates :price, numericality:{ only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, allow_blank: true
 
   def self.search(search)
     if search != ""
